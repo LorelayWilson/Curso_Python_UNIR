@@ -7,7 +7,8 @@
 4. [Instalación y Ejecución](#instalación-y-ejecución)
 5. [Ejemplos de Uso](#ejemplos-de-uso)
 6. [Criterios de Evaluación UNIR](#criterios-de-evaluación-unir)
-7. [Autoría y Contexto](#autoría-y-contexto)
+7. [Conclusión](#conclusión)
+8. [Autoría y Contexto](#autoría-y-contexto)
 
 ---
 
@@ -221,6 +222,20 @@ Materias reprobadas:
 ### 🌟 **Resumen Global de la Evaluación UNIR**
 
 > **"El proyecto cumple de manera sobresaliente con todos los requisitos funcionales y estructurales establecidos en el enunciado. La implementación es clara, modular y robusta, con validaciones adecuadas y manejo correcto de estructuras de datos. No se detectan errores que violen los requisitos y se observan buenas prácticas en la organización y control de flujo. El código es fácilmente mantenible y extensible, demostrando un dominio sólido de la programación estructurada en Python."**
+
+---
+
+## 🎉 **Conclusión**
+
+El **Trabajo 1 - Calculadora de Promedios Escolares** representa una implementación completa y profesional de la programación estructurada en Python, cumpliendo con todos los requisitos académicos establecidos por UNIR. 
+
+El proyecto demuestra:
+- **Dominio técnico** de las estructuras de datos y control de flujo
+- **Capacidad analítica** para procesar y validar información académica
+- **Pensamiento estructurado** en la organización del código
+- **Calidad profesional** en validaciones y manejo de errores
+
+La calculadora proporciona **funcionalidad robusta** para la gestión académica, estableciendo una base sólida para el desarrollo de aplicaciones educativas más complejas y demostrando un dominio sólido de la programación estructurada en Python.
 
 ---
 
