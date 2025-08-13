@@ -22,46 +22,128 @@ NOTA DE TRANSPARENCIA ACADÉMICA:
 © Agosto 2025
 """
 
+# ===========================================
+# EXCEPCIONES PERSONALIZADAS
+# ===========================================
+
+class ProductoNoEncontrado(Exception):
+    """Excepción lanzada cuando no se encuentra un producto en el inventario"""
+    pass
+
+class ProductoInvalido(Exception):
+    """Excepción lanzada cuando los datos del producto son inválidos"""
+    pass
+
+class InventarioVacio(Exception):
+    """Excepción lanzada cuando se intenta operar en un inventario vacío"""
+    pass
+
+# ===========================================
+# CLASE PRODUCTO
+# ===========================================
+
 class Producto:
-    """Clase para representar un producto en el inventario"""
+    """
+    Clase para representar un producto individual en el inventario.
     
-    def __init__(self, nombre, precio, cantidad):
+    Esta clase encapsula toda la información y comportamiento relacionado
+    con un producto, incluyendo validaciones robustas para mantener
+    la integridad de los datos.
+    
+    Attributes:
+        _nombre (str): Nombre del producto (validado, no vacío)
+        _precio (float): Precio unitario del producto (validado, ≥ 0)
+        _cantidad (int): Cantidad disponible en inventario (validado, ≥ 0)
+    
+    Methods:
+        actualizar_precio: Modifica el precio con validación
+        actualizar_cantidad: Modifica la cantidad con validación
+        actualizar_atributos: Actualiza precio y cantidad simultáneamente
+        calcular_valor_total: Calcula el valor total del stock
+        __str__: Representación textual del producto
+    """
+    
+    def __init__(self, nombre: str, precio: float, cantidad: int):
         """
-        Constructor de la clase Producto
+        Inicializa un nuevo producto con validaciones automáticas.
         
         Args:
-            nombre (str): Nombre del producto
-            precio (float): Precio del producto
-            cantidad (int): Cantidad en inventario
+            nombre (str): Nombre del producto (no puede estar vacío)
+            precio (float): Precio unitario (debe ser ≥ 0)
+            cantidad (int): Cantidad en inventario (debe ser ≥ 0)
             
         Raises:
-            ValueError: Si los parámetros no cumplen las validaciones
+            ValueError: Si nombre está vacío, precio es negativo, o cantidad es negativa
+            TypeError: Si los tipos de datos no son correctos
+            
+        Example:
+            >>> producto = Producto("Laptop", 999.99, 5)
+            >>> print(producto)
+            Producto: Laptop | Precio: $999.99 | Cantidad: 5 | Valor Total: $4999.95
         """
-        # Usar los setters para validaciones
+        # Usar los setters para validaciones automáticas
         self.nombre = nombre
         self.precio = precio
         self.cantidad = cantidad
     
     @property
-    def nombre(self):
-        """Getter para el nombre del producto"""
+    def nombre(self) -> str:
+        """
+        Obtiene el nombre del producto.
+        
+        Returns:
+            str: Nombre del producto (sin espacios extra)
+        """
         return self._nombre
     
     @nombre.setter
-    def nombre(self, value):
-        """Setter para el nombre con validación"""
+    def nombre(self, value: str) -> None:
+        """
+        Establece el nombre del producto con validación.
+        
+        Args:
+            value (str): Nuevo nombre del producto
+            
+        Raises:
+            ValueError: Si el nombre está vacío o solo contiene espacios
+            TypeError: Si el valor no es una cadena de texto
+            
+        Example:
+            >>> producto.nombre = "  Laptop Dell  "
+            >>> producto.nombre
+            'Laptop Dell'
+        """
         if not value or not isinstance(value, str) or value.strip() == "":
             raise ValueError("El nombre del producto no puede estar vacío y debe ser una cadena de texto")
         self._nombre = value.strip()
     
     @property
-    def precio(self):
-        """Getter para el precio del producto"""
+    def precio(self) -> float:
+        """
+        Obtiene el precio unitario del producto.
+        
+        Returns:
+            float: Precio del producto (siempre ≥ 0)
+        """
         return self._precio
     
     @precio.setter
-    def precio(self, value):
-        """Setter para el precio con validación"""
+    def precio(self, value: float) -> None:
+        """
+        Establece el precio del producto con validación.
+        
+        Args:
+            value (float): Nuevo precio del producto
+            
+        Raises:
+            ValueError: Si el precio es negativo
+            TypeError: Si el valor no es numérico
+            
+        Example:
+            >>> producto.precio = 1299.99
+            >>> producto.precio
+            1299.99
+        """
         if not isinstance(value, (int, float)):
             raise TypeError(f"El precio debe ser un número, se recibió: {type(value).__name__}")
         if value < 0:
@@ -69,28 +151,51 @@ class Producto:
         self._precio = float(value)
     
     @property
-    def cantidad(self):
-        """Getter para la cantidad del producto"""
+    def cantidad(self) -> int:
+        """
+        Obtiene la cantidad disponible del producto.
+        
+        Returns:
+            int: Cantidad en inventario (siempre ≥ 0)
+        """
         return self._cantidad
     
     @cantidad.setter
-    def cantidad(self, value):
-        """Setter para la cantidad con validación"""
+    def cantidad(self, value: int) -> None:
+        """
+        Establece la cantidad del producto con validación.
+        
+        Args:
+            value (int): Nueva cantidad del producto
+            
+        Raises:
+            ValueError: Si la cantidad es negativa
+            TypeError: Si el valor no es un entero
+            
+        Example:
+            >>> producto.cantidad = 25
+            >>> producto.cantidad
+            25
+        """
         if not isinstance(value, int):
             raise TypeError(f"La cantidad debe ser un número entero, se recibió: {type(value).__name__}")
         if value < 0:
             raise ValueError(f"La cantidad debe ser mayor o igual a cero, se recibió: {value}")
         self._cantidad = value
     
-    def actualizar_precio(self, nuevo_precio):
+    def actualizar_precio(self, nuevo_precio: float) -> None:
         """
-        Actualiza el precio del producto usando el setter
+        Actualiza el precio del producto usando el setter con validación.
         
         Args:
             nuevo_precio (float): Nuevo precio del producto
             
         Raises:
-            ValueError: Si el precio es negativo o no es un número
+            ValueError: Si el precio es negativo o no es un número válido
+            
+        Example:
+            >>> producto.actualizar_precio(1299.99)
+            Precio actualizado exitosamente para Laptop: $999.99 → $1299.99
         """
         precio_anterior = self._precio
         try:
@@ -99,15 +204,19 @@ class Producto:
         except (ValueError, TypeError) as e:
             raise ValueError(f"Error al actualizar precio: {e}")
     
-    def actualizar_cantidad(self, nueva_cantidad):
+    def actualizar_cantidad(self, nueva_cantidad: int) -> None:
         """
-        Actualiza la cantidad del producto usando el setter
+        Actualiza la cantidad del producto usando el setter con validación.
         
         Args:
             nueva_cantidad (int): Nueva cantidad del producto
             
         Raises:
-            ValueError: Si la cantidad es negativa o no es un entero
+            ValueError: Si la cantidad es negativa o no es un entero válido
+            
+        Example:
+            >>> producto.actualizar_cantidad(30)
+            Cantidad actualizada exitosamente para Laptop: 25 → 30 unidades
         """
         cantidad_anterior = self._cantidad
         try:
@@ -116,49 +225,131 @@ class Producto:
         except (ValueError, TypeError) as e:
             raise ValueError(f"Error al actualizar cantidad: {e}")
     
-    def calcular_valor_total(self):
+    def actualizar_atributos(self, nuevo_precio: float = None, nueva_cantidad: int = None) -> None:
         """
-        Calcula el valor total del producto (precio × cantidad)
+        Actualiza precio y/o cantidad del producto en una sola operación.
+        
+        Este método permite actualizar ambos atributos simultáneamente,
+        lo que es útil para operaciones de sincronización o actualizaciones
+        masivas de productos.
+        
+        Args:
+            nuevo_precio (float, optional): Nuevo precio del producto. Si es None, no se modifica
+            nueva_cantidad (int, optional): Nueva cantidad del producto. Si es None, no se modifica
+            
+        Raises:
+            ValueError: Si alguno de los valores es inválido
+            
+        Example:
+            >>> producto.actualizar_atributos(nuevo_precio=1199.99, nueva_cantidad=35)
+            Atributos actualizados exitosamente para Laptop:
+            - Precio: $1299.99 → $1199.99
+            - Cantidad: 30 → 35 unidades
+        """
+        cambios = []
+        
+        if nuevo_precio is not None:
+            precio_anterior = self._precio
+            self.precio = nuevo_precio
+            cambios.append(f"Precio: ${precio_anterior:.2f} → ${self._precio:.2f}")
+        
+        if nueva_cantidad is not None:
+            cantidad_anterior = self._cantidad
+            self.cantidad = nueva_cantidad
+            cambios.append(f"Cantidad: {cantidad_anterior} → {self._cantidad} unidades")
+        
+        if cambios:
+            print(f"Atributos actualizados exitosamente para {self._nombre}:")
+            for cambio in cambios:
+                print(f"  - {cambio}")
+        else:
+            print("No se especificaron cambios para realizar.")
+    
+    def calcular_valor_total(self) -> float:
+        """
+        Calcula el valor total del producto (precio × cantidad).
         
         Returns:
-            float: Valor total del producto
+            float: Valor total del stock del producto
+            
+        Example:
+            >>> producto.calcular_valor_total()
+            4999.95
         """
         return self._precio * self._cantidad
     
-    def __str__(self):
+    def __str__(self) -> str:
         """
-        Representación en cadena del producto
+        Representación en cadena del producto para visualización.
         
         Returns:
-            str: Información del producto formateada
+            str: Cadena formateada con toda la información del producto
+            
+        Example:
+            >>> print(producto)
+            Producto: Laptop | Precio: $999.99 | Cantidad: 5 | Valor Total: $4999.95
         """
-        valor_total = self.calcular_valor_total()
-        return f"Producto: {self._nombre} | Precio: ${self._precio:.2f} | Cantidad: {self._cantidad} | Valor Total: ${valor_total:.2f}"
+        return f"Producto: {self._nombre} | Precio: ${self._precio:.2f} | Cantidad: {self._cantidad} | Valor Total: ${self.calcular_valor_total():.2f}"
 
 
 class Inventario:
-    """Clase para gestionar el inventario de productos"""
+    """
+    Clase para gestionar una colección de productos con operaciones CRUD completas.
     
-    def __init__(self, actualizacion_automatica=False):
+    Esta clase implementa todas las operaciones necesarias para gestionar
+    un inventario de productos, incluyendo manejo inteligente de duplicados
+    y configuración flexible de comportamiento.
+    
+    Attributes:
+        _productos (List[Producto]): Lista de productos en el inventario
+        _actualizacion_automatica (bool): Configuración para manejo automático de duplicados
+    
+    Methods:
+        agregar_producto: Añade un producto al inventario
+        buscar_producto: Busca un producto por nombre
+        eliminar_producto: Elimina un producto del inventario
+        listar_productos: Muestra todos los productos
+        calcular_valor_inventario: Calcula el valor total del inventario
+        configurar_actualizacion_automatica: Cambia la configuración de duplicados
+        exportar_inventario: Exporta el inventario a un archivo
+        mostrar_resumen: Muestra un resumen rápido del inventario
+    """
+    
+    def __init__(self, actualizacion_automatica: bool = False):
         """
-        Constructor de la clase Inventario
+        Inicializa un inventario vacío con configuración opcional.
         
         Args:
             actualizacion_automatica (bool): Si True, actualiza automáticamente 
-                                            la cantidad al agregar productos duplicados
+                                            la cantidad al agregar productos duplicados.
+                                            Si False, pide confirmación al usuario.
+                                            
+        Example:
+            >>> inventario = Inventario(actualizacion_automatica=True)
+            >>> inventario._actualizacion_automatica
+            True
         """
         self._productos = []
         self._actualizacion_automatica = actualizacion_automatica
     
-    def agregar_producto(self, producto):
+    def agregar_producto(self, producto: Producto) -> None:
         """
-        Agrega un producto al inventario
+        Agrega un producto al inventario con manejo inteligente de duplicados.
+        
+        Si el producto ya existe, el comportamiento depende de la configuración:
+        - actualizacion_automatica=True: Actualiza automáticamente la cantidad
+        - actualizacion_automatica=False: Pide confirmación al usuario
         
         Args:
-            producto (Producto): Objeto de tipo Producto
+            producto (Producto): Objeto de tipo Producto a agregar
             
         Raises:
             TypeError: Si el objeto no es de tipo Producto
+            ProductoInvalido: Si el producto tiene datos inválidos
+            
+        Example:
+            >>> inventario.agregar_producto(Producto("Mouse", 25.99, 10))
+            Producto 'Mouse' agregado exitosamente al inventario.
         """
         if not isinstance(producto, Producto):
             raise TypeError(f"El objeto debe ser de tipo Producto, se recibió: {type(producto).__name__}")
@@ -189,18 +380,47 @@ class Inventario:
         self._productos.append(producto)
         print(f"Producto '{producto.nombre}' agregado exitosamente al inventario.")
     
-    def buscar_producto(self, nombre):
+    def mostrar_resumen(self) -> None:
         """
-        Busca un producto por su nombre
+        Muestra un resumen rápido del inventario tras operaciones.
+        
+        Este método proporciona información concisa sobre el estado
+        actual del inventario, útil para mostrar después de cada operación.
+        
+        Example:
+            >>> inventario.mostrar_resumen()
+            📊 RESUMEN RÁPIDO: 3 productos | Valor total: $1,245.98
+        """
+        if not self._productos:
+            print("📊 RESUMEN RÁPIDO: Inventario vacío")
+            return
+        
+        total_productos = len(self._productos)
+        valor_total = self.calcular_valor_inventario()
+        print(f"📊 RESUMEN RÁPIDO: {total_productos} productos | Valor total: ${valor_total:,.2f}")
+    
+    def buscar_producto(self, nombre: str) -> Producto:
+        """
+        Busca un producto por su nombre (búsqueda case-insensitive).
         
         Args:
             nombre (str): Nombre del producto a buscar
             
         Returns:
             Producto: Objeto Producto si se encuentra, None si no existe
+            
+        Raises:
+            ValueError: Si el nombre está vacío o no es una cadena válida
+            
+        Example:
+            >>> producto = inventario.buscar_producto("laptop dell")
+            >>> if producto:
+            ...     print(f"Encontrado: {producto}")
+            ... else:
+            ...     print("Producto no encontrado")
         """
         if not nombre or not isinstance(nombre, str):
-            return None
+            raise ValueError("El nombre del producto no puede estar vacío y debe ser una cadena de texto")
         
         nombre = nombre.strip().lower()
         for producto in self._productos:
@@ -208,18 +428,71 @@ class Inventario:
                 return producto
         return None
     
-    def calcular_valor_inventario(self):
+    def exportar_inventario(self, nombre_archivo: str = "inventario_exportado.txt") -> None:
         """
-        Calcula el valor total del inventario
+        Exporta el inventario completo a un archivo de texto.
+        
+        Este método crea un archivo con toda la información del inventario,
+        útil para respaldos o análisis externos.
+        
+        Args:
+            nombre_archivo (str): Nombre del archivo de salida (por defecto: inventario_exportado.txt)
+            
+        Raises:
+            IOError: Si hay problemas al escribir el archivo
+            
+        Example:
+            >>> inventario.exportar_inventario("mi_inventario.txt")
+            Inventario exportado exitosamente a: mi_inventario.txt
+        """
+        try:
+            with open(nombre_archivo, 'w', encoding='utf-8') as archivo:
+                archivo.write("=" * 60 + "\n")
+                archivo.write("EXPORTACIÓN DE INVENTARIO\n")
+                archivo.write("=" * 60 + "\n")
+                archivo.write(f"Fecha de exportación: {__import__('datetime').datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+                archivo.write(f"Total de productos: {len(self._productos)}\n")
+                archivo.write(f"Valor total del inventario: ${self.calcular_valor_inventario():.2f}\n")
+                archivo.write("=" * 60 + "\n\n")
+                
+                for i, producto in enumerate(self._productos, 1):
+                    archivo.write(f"{i}. {producto}\n")
+                
+                archivo.write("\n" + "=" * 60 + "\n")
+                archivo.write("FIN DE EXPORTACIÓN\n")
+                archivo.write("=" * 60 + "\n")
+            
+            print(f"Inventario exportado exitosamente a: {nombre_archivo}")
+            
+        except IOError as e:
+            print(f"Error al exportar el inventario: {e}")
+            raise IOError(f"No se pudo exportar el inventario: {e}")
+    
+    def calcular_valor_inventario(self) -> float:
+        """
+        Calcula el valor total del inventario sumando todos los productos.
         
         Returns:
             float: Valor total de todos los productos en inventario
+            
+        Example:
+            >>> valor_total = inventario.calcular_valor_inventario()
+            >>> print(f"Valor total: ${valor_total:,.2f}")
+            Valor total: $1,245.98
         """
         return sum(producto.calcular_valor_total() for producto in self._productos)
     
-    def listar_productos(self):
+    def listar_productos(self, ordenar_por: str = "nombre") -> None:
         """
-        Lista todos los productos del inventario
+        Lista todos los productos del inventario con opciones de ordenamiento.
+        
+        Args:
+            ordenar_por (str): Criterio de ordenamiento ('nombre', 'precio', 'cantidad', 'valor')
+                               Por defecto ordena por nombre
+                               
+        Example:
+            >>> inventario.listar_productos(ordenar_por="precio")
+            # Lista productos ordenados por precio de menor a mayor
         """
         if not self._productos:
             print("\n" + "="*50)
@@ -227,25 +500,46 @@ class Inventario:
             print("="*50)
             return
         
+        # Crear una copia ordenada de los productos
+        productos_ordenados = self._productos.copy()
+        
+        if ordenar_por == "nombre":
+            productos_ordenados.sort(key=lambda p: p.nombre.lower())
+        elif ordenar_por == "precio":
+            productos_ordenados.sort(key=lambda p: p.precio)
+        elif ordenar_por == "cantidad":
+            productos_ordenados.sort(key=lambda p: p.cantidad)
+        elif ordenar_por == "valor":
+            productos_ordenados.sort(key=lambda p: p.calcular_valor_total())
+        
         print("\n" + "="*50)
-        print("LISTADO DE PRODUCTOS EN INVENTARIO")
+        print(f"LISTADO DE PRODUCTOS EN INVENTARIO (Ordenado por: {ordenar_por})")
         print("="*50)
-        for i, producto in enumerate(self._productos, 1):
+        for i, producto in enumerate(productos_ordenados, 1):
             print(f"{i}. {producto}")
         print("="*50)
         print(f"Total de productos: {len(self._productos)}")
         print(f"Valor total del inventario: ${self.calcular_valor_inventario():.2f}")
         print("="*50)
     
-    def eliminar_producto(self, nombre):
+    def eliminar_producto(self, nombre: str) -> bool:
         """
-        Elimina un producto del inventario por su nombre
+        Elimina un producto del inventario por su nombre con confirmación.
         
         Args:
             nombre (str): Nombre del producto a eliminar
             
         Returns:
-            bool: True si se eliminó, False si no se encontró
+            bool: True si se eliminó exitosamente, False si no se encontró
+            
+        Raises:
+            ValueError: Si el nombre está vacío o no es una cadena válida
+            ProductoNoEncontrado: Si el producto no existe en el inventario
+            
+        Example:
+            >>> inventario.eliminar_producto("Laptop Dell")
+            Producto 'Laptop Dell' eliminado exitosamente del inventario.
+            True
         """
         if not nombre or not isinstance(nombre, str):
             raise ValueError("El nombre debe ser una cadena de texto válida")
@@ -253,28 +547,42 @@ class Inventario:
         nombre = nombre.strip().lower()
         for i, producto in enumerate(self._productos):
             if producto.nombre.lower() == nombre:
-                producto_eliminado = self._productos.pop(i)
-                print(f"Producto '{producto_eliminado.nombre}' eliminado exitosamente del inventario.")
-                return True
+                # Confirmar eliminación
+                print(f"¿Está seguro de que desea eliminar '{producto.nombre}'?")
+                confirmacion = input("Esta acción no se puede deshacer. Escriba 'ELIMINAR' para confirmar: ")
+                
+                if confirmacion == "ELIMINAR":
+                    producto_eliminado = self._productos.pop(i)
+                    print(f"Producto '{producto_eliminado.nombre}' eliminado exitosamente del inventario.")
+                    return True
+                else:
+                    print("Eliminación cancelada por el usuario.")
+                    return False
         
         print(f"No se encontró ningún producto con el nombre '{nombre}' para eliminar.")
         return False
     
-    def configurar_actualizacion_automatica(self, activar):
+    def configurar_actualizacion_automatica(self, activar: bool) -> None:
         """
-        Configura el modo de actualización automática
+        Configura el modo de actualización automática para productos duplicados.
         
         Args:
-            activar (bool): True para activar, False para desactivar
+            activar (bool): True para activar actualización automática, False para desactivar
+            
+        Example:
+            >>> inventario.configurar_actualizacion_automatica(True)
+            Actualización automática ACTIVADA. Los productos duplicados se actualizarán automáticamente.
         """
-        self._actualizacion_automatica = bool(activar)
-        estado = "activada" if self._actualizacion_automatica else "desactivada"
-        print(f"Actualización automática {estado}.")
-
-
-def obtener_numero(mensaje, tipo=float, minimo=0):
+        self._actualizacion_automatica = activar
+        estado = "ACTIVADA" if activar else "DESACTIVADA"
+        print(f"Actualización automática {estado}. Los productos duplicados se actualizarán automáticamente.")
+        
+def obtener_numero(mensaje: str, tipo=float, minimo: float = 0) -> float:
     """
-    Función auxiliar para obtener y validar entrada numérica del usuario
+    Función auxiliar para obtener y validar entrada numérica del usuario.
+    
+    Esta función implementa un bucle de validación robusto que maneja
+    entradas vacías, tipos incorrectos y valores fuera de rango.
     
     Args:
         mensaje (str): Mensaje a mostrar al usuario
@@ -282,7 +590,14 @@ def obtener_numero(mensaje, tipo=float, minimo=0):
         minimo (float): Valor mínimo permitido
         
     Returns:
-        int/float: Número validado
+        float: Número validado del tipo especificado
+        
+    Raises:
+        KeyboardInterrupt: Si el usuario cancela la operación
+        
+    Example:
+        >>> precio = obtener_numero("Ingrese precio: $", float, 0)
+        >>> cantidad = obtener_numero("Ingrese cantidad: ", int, 0)
     """
     while True:
         try:
@@ -296,15 +611,30 @@ def obtener_numero(mensaje, tipo=float, minimo=0):
                 print(f"Error: El valor debe ser mayor o igual a {minimo}. Valor ingresado: {valor}")
                 continue
             return valor
-        except ValueError as e:
+        except ValueError:
             tipo_nombre = "número entero" if tipo == int else "número decimal"
             print(f"Error: Debe ingresar un {tipo_nombre} válido. Valor ingresado: '{entrada}'")
+        except KeyboardInterrupt:
+            print("\nOperación cancelada por el usuario.")
+            raise
         except Exception as e:
             print(f"Error inesperado: {e}. Por favor inténtelo de nuevo.")
 
 
 def menu_principal():
-    """Función que muestra el menú principal y gestiona las opciones del usuario"""
+    """
+    Función principal que muestra el menú interactivo y gestiona todas las operaciones.
+    
+    Esta función implementa un bucle principal que presenta opciones al usuario
+    y ejecuta las operaciones correspondientes del inventario.
+    
+    Features:
+        - Menú interactivo con 10 opciones
+        - Manejo robusto de errores y excepciones
+        - Resumen rápido del inventario tras operaciones
+        - Opción de exportar inventario
+        - Salida elegante con Ctrl+C
+    """
     inventario = Inventario(actualizacion_automatica=False)
     
     while True:
@@ -319,11 +649,12 @@ def menu_principal():
         print("6. Actualizar cantidad de producto")
         print("7. Eliminar producto")
         print("8. Configurar actualización automática")
-        print("9. Salir")
+        print("9. Exportar inventario a archivo")
+        print("10. Salir")
         print("="*60)
         
         try:
-            opcion = input("Seleccione una opción (1-9): ").strip()
+            opcion = input("Seleccione una opción (1-10): ").strip()
             
             if opcion == "1":
                 # Agregar producto
@@ -339,6 +670,7 @@ def menu_principal():
                     
                     producto = Producto(nombre, precio, cantidad)
                     inventario.agregar_producto(producto)
+                    inventario.mostrar_resumen()  # Mostrar resumen tras operación
                     
                 except (ValueError, TypeError) as e:
                     print(f"Error al crear el producto: {e}")
@@ -353,7 +685,15 @@ def menu_principal():
                     print("Error: Debe ingresar un nombre.")
                     continue
                 
-                producto = inventario.buscar_producto(nombre)
+                try:
+                    producto = inventario.buscar_producto(nombre)
+                    if producto:
+                        print("Producto encontrado:")
+                        print(producto)
+                    else:
+                        print(f"No se encontró ningún producto con el nombre '{nombre}'.")
+                except ValueError as e:
+                    print(f"Error en la búsqueda: {e}")
                 if producto:
                     print("Producto encontrado:")
                     print(producto)
@@ -363,11 +703,13 @@ def menu_principal():
             elif opcion == "3":
                 # Listar productos
                 inventario.listar_productos()
+                inventario.mostrar_resumen()  # Mostrar resumen tras listar
                 
             elif opcion == "4":
                 # Calcular valor total
                 valor_total = inventario.calcular_valor_inventario()
                 print(f"\nValor total del inventario: ${valor_total:.2f}")
+                inventario.mostrar_resumen()  # Mostrar resumen tras calcular
                 
             elif opcion == "5":
                 # Actualizar precio
@@ -383,6 +725,7 @@ def menu_principal():
                     try:
                         nuevo_precio = obtener_numero("Ingrese el nuevo precio: $", float, 0)
                         producto.actualizar_precio(nuevo_precio)
+                        inventario.mostrar_resumen()  # Mostrar resumen tras actualizar
                     except (ValueError, TypeError) as e:
                         print(f"Error al actualizar precio: {e}")
                     except Exception as e:
@@ -404,6 +747,7 @@ def menu_principal():
                     try:
                         nueva_cantidad = obtener_numero("Ingrese la nueva cantidad: ", int, 0)
                         producto.actualizar_cantidad(nueva_cantidad)
+                        inventario.mostrar_resumen()  # Mostrar resumen tras actualizar
                     except (ValueError, TypeError) as e:
                         print(f"Error al actualizar cantidad: {e}")
                     except Exception as e:
@@ -426,6 +770,7 @@ def menu_principal():
                     if confirmacion == 's':
                         try:
                             inventario.eliminar_producto(nombre)
+                            inventario.mostrar_resumen()  # Mostrar resumen tras eliminar
                         except ValueError as e:
                             print(f"Error al eliminar producto: {e}")
                         except Exception as e:
@@ -452,13 +797,30 @@ def menu_principal():
                     print("Opción no válida. Configuración sin cambios.")
                 
             elif opcion == "9":
+                # Exportar inventario
+                print("\n--- EXPORTAR INVENTARIO ---")
+                if not inventario._productos:
+                    print("El inventario está vacío. No hay nada que exportar.")
+                    continue
+                
+                nombre_archivo = input("Ingrese el nombre del archivo (o presione Enter para usar el predeterminado): ").strip()
+                if not nombre_archivo:
+                    nombre_archivo = "inventario_exportado.txt"
+                
+                try:
+                    inventario.exportar_inventario(nombre_archivo)
+                    print("✅ Exportación completada exitosamente.")
+                except Exception as e:
+                    print(f"❌ Error al exportar: {e}")
+                
+            elif opcion == "10":
                 # Salir
                 print("\n¡Gracias por usar el Sistema de Inventario!")
                 print("¡Hasta pronto!")
                 break
                 
             else:
-                print("Error: Opción no válida. Por favor seleccione una opción del 1 al 9.")
+                print("Error: Opción no válida. Por favor seleccione una opción del 1 al 10.")
                 
         except KeyboardInterrupt:
             print("\n\nPrograma interrumpido por el usuario.")
