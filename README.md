@@ -122,6 +122,7 @@ classDiagram
         +__init__(nombre, precio, cantidad)
         +actualizar_precio(nuevo_precio)
         +actualizar_cantidad(nueva_cantidad)
+        +actualizar_atributos(precio, cantidad)
         +calcular_valor_total()
         +__str__()
     }
@@ -133,13 +134,17 @@ classDiagram
         +agregar_producto(producto)
         +buscar_producto(nombre)
         +eliminar_producto(nombre)
-        +listar_productos()
+        +listar_productos(ordenar_por)
         +calcular_valor_inventario()
         +configurar_actualizacion_automatica(activar)
+        +exportar_inventario(archivo)
+        +mostrar_resumen()
     }
     
     Inventario "1" *-- "*" Producto : contiene
 ```
+
+> **💡 Funcionalidades Extra**: El sistema incluye características adicionales como exportación, ordenamiento avanzado y actualización simultánea de atributos, que enriquecen la experiencia sin ser requeridas por el enunciado.
 
 ### 🔄 **Flujo de Operaciones del Sistema de Inventario**
 ```mermaid
@@ -149,11 +154,13 @@ graph TD
     C -->|1-6| D[Operaciones CRUD]
     C -->|7| E[Eliminación]
     C -->|8| F[Configuración]
-    C -->|9| G[Salida]
-    D --> H[Validaciones]
-    H --> I[Procesamiento]
-    I --> J[Feedback]
-    J --> B
+    C -->|9| G[Exportación]
+    C -->|10| H[Salida]
+    D --> I[Validaciones]
+    I --> J[Procesamiento]
+    J --> K[Feedback + Resumen]
+    K --> B
+    G --> L[Archivo de Texto]
 ```
 
 ---

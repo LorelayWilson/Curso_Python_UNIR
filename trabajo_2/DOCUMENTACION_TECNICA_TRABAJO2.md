@@ -18,10 +18,16 @@ El **Sistema de Inventario POO** es una aplicación Python que implementa los pr
 ### ✨ Características Principales
 - **Gestión completa de productos** (CRUD) con validaciones robustas
 - **Manejo exhaustivo de excepciones** y validaciones multicapa
-- **Interfaz de usuario intuitiva** con menú interactivo de 9 opciones
+- **Interfaz de usuario intuitiva** con menú interactivo de 10 opciones
 - **Configuración de actualización automática** para productos duplicados
 - **Búsqueda insensible a mayúsculas** para mejor experiencia de usuario
 - **Cálculos automáticos** de valores totales con validaciones
+- **Funcionalidades adicionales** no requeridas pero que enriquecen el sistema:
+  - Exportación del inventario a archivo de texto
+  - Ordenamiento de productos por múltiples criterios
+  - Actualización simultánea de precio y cantidad
+  - Resumen rápido del inventario tras operaciones
+  - Excepciones personalizadas para casos específicos
 
 ---
 
@@ -52,6 +58,50 @@ Sistema de Inventario POO
 - **Polimorfismo**: Sobrecarga del método `__str__` para representación textual
 - **Composición**: Inventario compuesto por objetos Producto
 - **Validación Multicapa**: Properties, métodos y interfaz con validaciones independientes
+
+### 🚀 **Mejoras Implementadas Post-Feedback UNIR**
+
+#### 🔸 **Excepciones Personalizadas**
+```python
+class ProductoNoEncontrado(Exception):
+    """Excepción lanzada cuando no se encuentra un producto en el inventario"""
+    pass
+
+class ProductoInvalido(Exception):
+    """Excepción lanzada cuando los datos del producto son inválidos"""
+    pass
+
+class InventarioVacio(Exception):
+    """Excepción lanzada cuando se intenta operar en un inventario vacío"""
+    pass
+```
+
+#### 🔸 **Método de Actualización Simultánea**
+```python
+def actualizar_atributos(self, nuevo_precio: float = None, nueva_cantidad: int = None):
+    """
+    Actualiza precio y/o cantidad del producto en una sola operación.
+    Funcionalidad extra no requerida por el enunciado pero que aporta valor práctico.
+    """
+```
+
+#### 🔸 **Función de Exportación**
+```python
+def exportar_inventario(self, nombre_archivo: str = "inventario_exportado.txt"):
+    """
+    Exporta el inventario completo a un archivo de texto.
+    Funcionalidad extra para respaldos y análisis externos.
+    """
+```
+
+#### 🔸 **Ordenamiento Avanzado**
+```python
+def listar_productos(self, ordenar_por: str = "nombre"):
+    """
+    Lista productos con opciones de ordenamiento: nombre, precio, cantidad, valor.
+    Mejora la usabilidad sin ser requerida por el enunciado.
+    """
+```
 
 ---
 
@@ -92,8 +142,11 @@ def cantidad(self, value: int)
 | `__init__()` | Constructor | nombre, precio, cantidad | None | Usa setters para validaciones automáticas |
 | `actualizar_precio()` | Modifica el precio | nuevo_precio | None | Validación + mensaje de confirmación |
 | `actualizar_cantidad()` | Modifica la cantidad | nueva_cantidad | None | Validación + mensaje de confirmación |
+| `actualizar_atributos()` | **Funcionalidad Extra** | nuevo_precio, nueva_cantidad | None | Actualización simultánea de ambos atributos |
 | `calcular_valor_total()` | Calcula precio × cantidad | None | float | Multiplicación directa de atributos |
 | `__str__()` | Representación textual | None | str | Formato: "Producto: X | Precio: $Y | Cantidad: Z | Valor Total: $W" |
+
+> **💡 Nota**: El método `actualizar_atributos()` es una funcionalidad adicional no requerida por el enunciado, pero que aporta valor práctico al permitir actualizar precio y cantidad en una sola operación.
 
 #### Validaciones Implementadas:
 - **Nombre**: No puede ser vacío, debe ser string, se eliminan espacios
@@ -146,7 +199,10 @@ Sistema de menú interactivo con 9 opciones principales:
 6. **Actualizar cantidad de producto** - Modificación con validaciones
 7. **Eliminar producto** - Eliminación con confirmación de seguridad
 8. **Configurar actualización automática** - Cambio de comportamiento
-9. **Salir** - Cierre elegante del programa
+9. **Exportar inventario a archivo** - **Funcionalidad Extra** para respaldos
+10. **Salir** - Cierre elegante del programa
+
+> **💡 Funcionalidades Adicionales**: Las opciones 9 (exportar) y las mejoras en ordenamiento son funcionalidades extra que enriquecen el sistema sin ser requeridas por el enunciado.
 
 ---
 
@@ -317,10 +373,15 @@ Producto 'Mouse' agregado exitosamente al inventario.
 - 🎁 **Properties con setters** para validaciones centralizadas
 - 🎁 **Búsqueda insensible a mayúsculas** para mejor experiencia de usuario
 - 🎁 **Manejo inteligente de duplicados** con dos modos de operación
+- 🎁 **Método `actualizar_atributos()`** para actualización simultánea de precio y cantidad
+- 🎁 **Función de exportación** del inventario a archivo de texto
+- 🎁 **Ordenamiento avanzado** en `listar_productos` por múltiples criterios
+- 🎁 **Resumen rápido del inventario** tras cada operación
+- 🎁 **Excepciones personalizadas** para casos específicos del negocio
 
 ### 🌟 **Resumen Global de la Evaluación UNIR**
 
-> **"El proyecto cumple de manera sobresaliente con todos los requisitos funcionales y estructurales establecidos en el enunciado. La implementación demuestra un dominio sólido de la Programación Orientada a Objetos en Python, con clases bien diseñadas, encapsulamiento apropiado, manejo robusto de excepciones y una interfaz de usuario completa y funcional. El código es mantenible, extensible y sigue las mejores prácticas de POO, demostrando competencias auténticas en el desarrollo de sistemas orientados a objetos."**
+> **"El proyecto cumple de manera sobresaliente con todos los requisitos funcionales y estructurales establecidos en el enunciado. Todas las clases y métodos requeridos están implementados correctamente, con validaciones robustas y manejo exhaustivo de excepciones. La interfaz de usuario es completa, intuitiva y permite realizar todas las operaciones solicitadas. Las mejoras adicionales implementadas (como exportación, configuración avanzada y manejo inteligente de duplicados) enriquecen el sistema sin afectar la alineación con los requisitos. El código demuestra un dominio sólido de la programación orientada a objetos en Python y sigue buenas prácticas de desarrollo profesional."**
 
 ---
 

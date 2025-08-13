@@ -41,7 +41,7 @@ Desarrollar e implementar un sistema integral de gestión de inventario utilizan
 | **Sistema Core** | Clases Producto e Inventario con funcionalidad completa | ✅ |
 | **Operaciones CRUD** | Create, Read, Update, Delete para gestión de productos | ✅ |
 | **Validaciones** | Sistema multicapa de validación de datos | ✅ |
-| **Interfaz Usuario** | Menú interactivo con 9 opciones funcionales | ✅ |
+| **Interfaz Usuario** | Menú interactivo con 10 opciones funcionales | ✅ |
 | **Manejo Errores** | Gestión robusta de excepciones y casos edge | ✅ |
 | **Documentación** | Documentación técnica completa y profesional | ✅ |
 
@@ -97,6 +97,15 @@ Desarrollar e implementar un sistema integral de gestión de inventario utilizan
 - **🛡️ Validaciones Mejoradas**: Properties con setters para validación centralizada
 - **📊 Mensajes Informativos**: Sistema de feedback detallado al usuario
 - **🔍 Búsqueda Inteligente**: Implementación case-insensitive para mejor UX
+
+**🚀 Mejoras Post-Feedback UNIR (Funcionalidades Extra):**
+
+- **📁 Exportación de Inventario**: Función para exportar a archivo de texto
+- **🔄 Actualización Simultánea**: Método para modificar precio y cantidad en una operación
+- **📊 Ordenamiento Avanzado**: Listado con múltiples criterios de ordenación
+- **📈 Resumen Rápido**: Vista concisa del inventario tras operaciones
+- **⚠️ Excepciones Personalizadas**: Manejo específico de casos de negocio
+- **🎯 Menú Extendido**: 10 opciones en lugar de las 9 requeridas
 
 ---
 

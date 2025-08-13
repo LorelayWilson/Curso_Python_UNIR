@@ -147,6 +147,19 @@ Activar/desactivar actualización automática
 
 </td><td>
 
+**📁 Exportar inventario** 🆕
+
+</td><td>
+
+Guardar inventario en archivo de texto
+
+</td></tr>
+<tr><td align="center">
+
+**10**
+
+</td><td>
+
 **🚪 Salir**
 
 </td><td>
@@ -279,6 +292,28 @@ graph LR
 ### 🛡️ **Confirmaciones de Seguridad**
 - **🗑️ Eliminar producto**: Siempre pide confirmación
 - **➕ Productos duplicados**: Solo en modo manual
+
+### 🚀 **Funcionalidades Extra Implementadas**
+
+#### 📁 **Exportar Inventario (Opción 9)**
+- **Propósito**: Crear respaldo del inventario en archivo de texto
+- **Formato**: Archivo con fecha, totales y lista detallada de productos
+- **Uso**: Útil para respaldos, análisis externos o auditorías
+
+#### 🔄 **Actualización Simultánea de Atributos**
+- **Método**: `actualizar_atributos(precio, cantidad)`
+- **Ventaja**: Modificar precio y cantidad en una sola operación
+- **Casos de uso**: Sincronización de datos, actualizaciones masivas
+
+#### 📊 **Ordenamiento Avanzado en Listado**
+- **Criterios**: nombre, precio, cantidad, valor total
+- **Comando**: `listar_productos(ordenar_por="precio")`
+- **Beneficio**: Mejor organización visual del inventario
+
+#### 📈 **Resumen Rápido del Inventario**
+- **Función**: `mostrar_resumen()`
+- **Información**: Total de productos y valor monetario
+- **Activación**: Automática tras operaciones principales
 
 ---
 
