@@ -8,7 +8,13 @@ def validar_calificacion(nombre_materia: str) -> float:
     while True:
         calif = input(
             f"Ingrese la calificación para '{nombre_materia}' ({MIN_CALIF}-{MAX_CALIF}): "
-        ).replace(',', '.')
+        ).strip()
+        
+        if not calif:  # Entrada vacía
+            print("Error: La calificación no puede estar vacía. Por favor, ingrese un valor.")
+            continue
+            
+        calif = calif.replace(',', '.')
         try:
             calif = float(calif)
             if MIN_CALIF <= calif <= MAX_CALIF:
@@ -49,7 +55,7 @@ def calcular_promedio(datos: list[tuple[str, float]]) -> float:
     """Calcula el promedio de las calificaciones."""
     if not datos:
         return 0.0
-    return sum(calif for _, calif in datos) / len(datos)
+    return round(sum(calif for _, calif in datos) / len(datos), 2)
 
 
 def determinar_estado(
@@ -61,6 +67,58 @@ def determinar_estado(
     return aprobadas, reprobadas
 
 
+def mostrar_encabezado(umbral: float) -> None:
+    """Muestra el encabezado del resumen."""
+    print("\n===== RESUMEN DE CALIFICACIONES =====")
+    print(f"Umbral de aprobación utilizado: {umbral:.2f}\n")
+
+
+def mostrar_lista_materias(datos: list[tuple[str, float]]) -> None:
+    """Muestra la lista numerada de materias y calificaciones."""
+    if not datos:
+        print("No se ingresaron materias.")
+        return
+    for i, (mat, calif) in enumerate(datos):
+        print(f"{i + 1}. {mat}: {calif:.2f}")
+
+
+def mostrar_estadisticas(promedio: float) -> None:
+    """Muestra las estadísticas principales."""
+    print(f"\nPromedio general: {promedio:.2f}")
+
+
+def mostrar_clasificacion(datos: list[tuple[str, float]], aprobadas: list[int], reprobadas: list[int]) -> None:
+    """Muestra la clasificación de materias por estado."""
+    if aprobadas:
+        print("\nMaterias aprobadas:")
+        for i in aprobadas:
+            print(f"  - {datos[i][0]} ({datos[i][1]:.2f})")
+    else:
+        print("\nNo hay materias aprobadas.")
+    
+    if reprobadas:
+        print("\nMaterias reprobadas:")
+        for i in reprobadas:
+            print(f"  - {datos[i][0]} ({datos[i][1]:.2f})")
+    else:
+        print("\nNo hay materias reprobadas.")
+
+
+def mostrar_extremos(datos: list[tuple[str, float]]) -> None:
+    """Muestra las materias con mejor y peor calificación."""
+    if not datos:
+        print("\nNo hay datos de materias para mostrar extremos.")
+        return
+    
+    idx_max = max(range(len(datos)), key=lambda i: datos[i][1])
+    idx_min = min(range(len(datos)), key=lambda i: datos[i][1])
+    
+    print("\nMateria con mejor calificación:")
+    print(f"  - {datos[idx_max][0]} ({datos[idx_max][1]:.2f})")
+    print("Materia con peor calificación:")
+    print(f"  - {datos[idx_min][0]} ({datos[idx_min][1]:.2f})")
+
+
 def mostrar_resumen(
     datos: list[tuple[str, float]],
     promedio: float,
@@ -69,35 +127,11 @@ def mostrar_resumen(
     umbral: float
 ) -> None:
     """Muestra un resumen de las calificaciones ingresadas."""
-    print("\n===== RESUMEN DE CALIFICACIONES =====")
-    print(f"Umbral de aprobación utilizado: {umbral:.2f}\n")
-    if not datos:
-        print("No se ingresaron materias.")
-        return
-    for i, (mat, calif) in enumerate(datos):
-        print(f"{i + 1}. {mat}: {calif:.2f}")
-    print(f"\nPromedio general: {promedio:.2f}")
-    if aprobadas:
-        print("\nMaterias aprobadas:")
-        for i in aprobadas:
-            print(f"  - {datos[i][0]} ({datos[i][1]:.2f})")
-    else:
-        print("\nNo hay materias aprobadas.")
-    if reprobadas:
-        print("\nMaterias reprobadas:")
-        for i in reprobadas:
-            print(f"  - {datos[i][0]} ({datos[i][1]:.2f})")
-    else:
-        print("\nNo hay materias reprobadas.")
-    if datos:
-        idx_max = max(range(len(datos)), key=lambda i: datos[i][1])
-        idx_min = min(range(len(datos)), key=lambda i: datos[i][1])
-        print("\nMateria con mejor calificación:")
-        print(f"  - {datos[idx_max][0]} ({datos[idx_max][1]:.2f})")
-        print("Materia con peor calificación:")
-        print(f"  - {datos[idx_min][0]} ({datos[idx_min][1]:.2f})")
-    else:
-        print("\nNo hay datos de materias para mostrar extremos.")
+    mostrar_encabezado(umbral)
+    mostrar_lista_materias(datos)
+    mostrar_estadisticas(promedio)
+    mostrar_clasificacion(datos, aprobadas, reprobadas)
+    mostrar_extremos(datos)
 
 
 def main() -> None:
@@ -106,10 +140,13 @@ def main() -> None:
     while True:
         umbral_input = input(
             f"Introduce el umbral de aprobación (presiona Enter para usar {UMBRAL_DEFAULT}): "
-        ).replace(',', '.').strip()
+        ).strip()
+        
         if umbral_input == '':
             umbral = UMBRAL_DEFAULT
             break
+            
+        umbral_input = umbral_input.replace(',', '.')
         try:
             umbral = float(umbral_input)
             if MIN_CALIF <= umbral <= MAX_CALIF:
@@ -117,6 +154,7 @@ def main() -> None:
             print(f"El umbral debe estar entre {MIN_CALIF} y {MAX_CALIF}.")
         except ValueError:
             print("Introduce un número válido para el umbral.")
+    
     datos = ingresar_calificaciones()
     if not datos:
         print("No se ingresaron datos. ¡Hasta la próxima!")
