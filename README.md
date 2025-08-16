@@ -4,7 +4,7 @@
 
 ![Python](https://img.shields.io/badge/Python-3.6+-3776ab?style=for-the-badge&logo=python&logoColor=white)
 ![Universidad](https://img.shields.io/badge/Universidad-UNIR-d32f2f?style=for-the-badge)
-![Estado](https://img.shields.io/badge/Estado-Completado-4caf50?style=for-the-badge&logo=check-circle&logoColor=white)
+![Estado](https://img.shields.io/badge/Estado-3%20Trabajos%20Completados-4caf50?style=for-the-badge&logo=check-circle&logoColor=white)
 ![Licencia](https://img.shields.io/badge/Licencia-Académica-blue?style=for-the-badge)
 
 **Portafolio completo de proyectos académicos desarrollados en Python**
@@ -28,7 +28,6 @@ Este repositorio contiene una **colección completa de proyectos académicos** d
 - ✅ **Trabajo 1**: Calculadora de Promedios Escolares - Sintaxis y Estructuras Básicas
 - ✅ **Trabajo 2**: Sistema de Inventario POO - Programación Orientada a Objetos
 - ✅ **Trabajo 3**: Análisis de Red de Tiendas - Pandas y Numpy para Análisis de Datos
-- ✅ **Trabajo 4**: Análisis de Visualizaciones - Matplotlib y Seaborn para Visualización de Datos
 - ✅ **Documentación Completa**: Cada proyecto incluye documentación técnica exhaustiva
 - ✅ **Estándares Profesionales**: Código limpio, validaciones robustas y manejo de errores
 
@@ -75,24 +74,11 @@ jupyter notebook
 # Abrir: analisis_red_tiendas.ipynb
 ```
 
-#### **Trabajo 4: Análisis de Visualizaciones**
-```bash
-# Navegar al directorio del trabajo
-cd trabajo_4
-
-# Instalar dependencias
-pip install -r requirements.txt
-
-# Ejecutar el análisis completo
-python analisis_ventas_minoristas.py
-```
-
 ### Uso Básico
 ```python
 # Trabajo 1: Sigue las instrucciones para ingresar materias y calificaciones
 # Trabajo 2: Selecciona las opciones del 1 al 9 en el menú interactivo
 # Trabajo 3: Ejecuta las celdas del notebook para análisis de datos
-# Trabajo 4: El script ejecuta automáticamente todas las visualizaciones
 ```
 
 ---
@@ -126,16 +112,10 @@ python analisis_ventas_minoristas.py
 | **Satisfacción del Cliente** | Evaluación y correlación con rendimiento | ✅ |
 | **Estadísticas con Numpy** | Mediana, desviación estándar y simulaciones | ✅ |
 | **Proyecciones Futuras** | Simulación de ventas para 3 meses | ✅ |
-
-### Trabajo 4: Análisis de Visualizaciones
-| **Funcionalidad** | **Descripción** | **Estado** |
-|:---|:---|:---:|
-| **Visualizaciones Matplotlib** | Gráficos univariantes, bivariantes y personalización | ✅ |
-| **Visualizaciones Seaborn** | Boxplots, violinplots, heatmaps y pairplots | ✅ |
-| **Dashboard Integrado** | 12 visualizaciones organizadas profesionalmente | ✅ |
-| **Análisis Automático** | Exploración y preparación automática de datos | ✅ |
-| **Guardado Automático** | Todas las visualizaciones en PNG de alta resolución | ✅ |
-| **Insights Automáticos** | Conclusiones y recomendaciones basadas en datos | ✅ |
+| **Análisis de Correlaciones** | Relaciones entre ventas e inventarios | ✅ |
+| **Detección de Anomalías** | Identificación de tiendas con bajo rendimiento | ✅ |
+| **Reportes Automáticos** | Generación de insights y recomendaciones | ✅ |
+| **Validación de Datos** | Verificación de integridad y consistencia | ✅ |
 
 ### Características Comunes
 - **Documentación Exhaustiva**: Cada proyecto incluye documentación técnica completa
@@ -256,39 +236,6 @@ graph TD
 
 ---
 
-### Trabajo 4: Análisis de Visualizaciones
-#### **Arquitectura del Sistema**
-```mermaid
-graph TD
-    A[Descarga Dataset] --> B[Carga y Preparación]
-    B --> C[Análisis Exploratorio]
-    C --> D[Generación Matplotlib]
-    C --> E[Generación Seaborn]
-    C --> F[Creación Dashboard]
-    D --> G[Guardado PNG]
-    E --> G
-    F --> G
-    G --> H[Análisis y Conclusiones]
-    H --> I[Reporte Final]
-```
-
-#### **Flujo de Visualizaciones**
-```mermaid
-graph TD
-    A[Dataset Superstore] --> B[Preparación de Datos]
-    B --> C[Visualizaciones Univariantes]
-    B --> D[Visualizaciones Bivariantes]
-    B --> E[Visualizaciones Multivariantes]
-    C --> F[Dashboard Integrado]
-    D --> F
-    E --> F
-    F --> G[Guardado de Imágenes]
-    G --> H[Análisis Automático]
-    H --> I[Conclusiones]
-```
-
----
-
 ## Documentación
 
 ### Archivos Disponibles
@@ -299,7 +246,6 @@ graph TD
 | **trabajo_1/** | Calculadora de Promedios Escolares | Proyecto de sintaxis básica |
 | **trabajo_2/** | Sistema de Inventario POO | Proyecto de programación orientada a objetos |
 | **trabajo_3/** | Análisis de Red de Tiendas | Proyecto de análisis de datos con Pandas y Numpy |
-| **trabajo_4/** | Análisis de Visualizaciones | Proyecto de visualización con Matplotlib y Seaborn |
 
 ### Documentación por Proyecto
 
@@ -314,10 +260,6 @@ graph TD
 #### **Trabajo 3: Análisis de Red de Tiendas**
 - **Documentación Técnica**: `trabajo_3/DOCUMENTACION_TECNICA_TRABAJO3.md`
 - **Código Fuente**: `trabajo_3/analisis_red_tiendas.ipynb`
-
-#### **Trabajo 4: Análisis de Visualizaciones**
-- **Documentación Técnica**: `trabajo_4/DOCUMENTACION_TECNICA_TRABAJO4.md`
-- **Código Fuente**: `trabajo_4/analisis_ventas_minoristas.py`
 
 ---
 
@@ -364,11 +306,6 @@ cd trabajo_3
 pip install pandas numpy jupyter
 jupyter notebook
 # Abrir: analisis_red_tiendas.ipynb
-
-# Trabajo 4: Análisis de Visualizaciones
-cd ../trabajo_4
-pip install -r requirements.txt
-python analisis_ventas_minoristas.py
 ```
 
 ### Solución de Problemas Comunes
@@ -426,20 +363,13 @@ jupyter notebook
 # 4. Analizar simulaciones y proyecciones futuras
 ```
 
-### Trabajo 4: Análisis de Visualizaciones
-```bash
-# Ejecutar el análisis completo
-cd trabajo_4
-pip install -r requirements.txt
-python analisis_ventas_minoristas.py
-
-# El script ejecuta automáticamente:
-# 1. Descarga del dataset superstore_dataset2012.csv
-# 2. Generación de visualizaciones univariantes, bivariantes y multivariantes
-# 3. Creación del dashboard integrado
-# 4. Guardado de todas las imágenes en PNG
-# 5. Análisis automático y conclusiones
-```
+#### **Ejemplos de Análisis Realizados**
+- **Análisis de Ventas**: Total por producto y por tienda
+- **Cálculo de Ingresos**: Cantidad vendida × Precio unitario
+- **Rotación de Inventarios**: Porcentaje vendido por tienda
+- **Análisis de Satisfacción**: Correlación con rendimiento de ventas
+- **Estadísticas con Numpy**: Mediana, desviación estándar, simulaciones
+- **Proyecciones Futuras**: Simulación de ventas para 3 meses
 
 ### Datos de Prueba Sugeridos
 
@@ -474,15 +404,6 @@ Producto: Mouse, Tienda: Norte, Cantidad: 50, Precio: 25, Fecha: 2024-01-15
 Producto: Teclado, Tienda: Sur, Cantidad: 30, Precio: 89, Fecha: 2024-01-15
 ```
 
-#### **Trabajo 4: Dataset de Visualizaciones**
-```
-El script descarga automáticamente el dataset superstore_dataset2012.csv
-Contiene datos de ventas minoristas con columnas:
-- Order Date, Ship Date, Customer ID, Product Name
-- Sales, Quantity, Discount, Profit
-- Category, Sub-Category, Region, State
-```
-
 ---
 
 ## Manejo de Errores
@@ -499,9 +420,26 @@ Contiene datos de ventas minoristas con columnas:
 - `Exception`: Errores inesperados
 
 ### Mensajes de Error
+
+#### **Trabajo 1: Calculadora de Promedios**
 ```
 Error: Debe ingresar un número decimal válido. Valor ingresado: 'abc'
+Error: La calificación debe estar entre 0.0 y 10.0. Valor ingresado: 15.0
+```
+
+#### **Trabajo 2: Sistema de Inventario**
+```
 Error al actualizar precio: El precio debe ser positivo, se recibió: -50.0
+Error: La cantidad debe ser un número entero positivo
+Error: Producto no encontrado en el inventario
+```
+
+#### **Trabajo 3: Análisis de Red de Tiendas**
+```
+Error: No se pudo cargar el archivo CSV 'ventas.csv'
+Error: Columna 'Nivel_Satisfaccion' no encontrada en el dataset
+Error: Datos de inventario inconsistentes con ventas
+Error: No hay datos suficientes para el análisis estadístico
 ```
 
 ---
@@ -536,23 +474,19 @@ Error al actualizar precio: El precio debe ser positivo, se recibió: -50.0
 | **Análisis Implementados** | 4 | Funcionalidad |
 | **Visualizaciones** | 4 | Presentación |
 | **Cumplimiento UNIR** | 100% | Calidad |
-
-### Trabajo 4: Análisis de Visualizaciones
-| **Métrica** | **Valor** | **Categoría** |
-|:---|---:|:---|
-| **Líneas de Código** | 450+ | Implementación |
-| **Funciones Principales** | 8 | Funcionalidad |
-| **Tipos de Gráficos** | 12+ | Visualización |
-| **Librerías Utilizadas** | 4 | Tecnología |
-| **Imágenes Generadas** | 6 archivos PNG | Presentación |
-| **Cumplimiento UNIR** | 100% | Calidad |
+| **Registros de Datos** | 150+ | Contenido |
+| **Funciones de Análisis** | 6+ | Funcionalidad |
+| **Cálculos Estadísticos** | 8+ | Análisis |
+| **Simulaciones Futuras** | 3 meses | Proyecciones |
+| **Manejo de Errores** | 5 tipos | Robustez |
+| **Documentación** | Completa | Calidad |
 
 ### Métricas Generales
 | **Métrica** | **Valor** | **Categoría** |
 |:---|---:|:---|
-| **Total de Líneas** | 1000+ | Implementación |
-| **Proyectos Completados** | 4 | Portafolio |
-| **Documentación Generada** | 4 archivos | Documentación |
+| **Total de Líneas** | 700+ | Implementación |
+| **Proyectos Completados** | 3 | Portafolio |
+| **Documentación Generada** | 3 archivos | Documentación |
 | **Cobertura de Funcionalidades** | 100% | Calidad |
 | **Estándares de Código** | PEP 8 | Calidad |
 
@@ -571,6 +505,13 @@ Error al actualizar precio: El precio debe ser positivo, se recibió: -50.0
 - **Persistencia**: Los datos no se guardan entre sesiones
 - **Escalabilidad**: Optimizado para inventarios pequeños a medianos
 - **Concurrencia**: Diseñado para un solo usuario
+
+#### **Trabajo 3: Análisis de Red de Tiendas**
+- **Datos Estáticos**: Los CSV no se actualizan en tiempo real
+- **Interfaz**: Solo notebook de Jupyter, sin interfaz web
+- **Escalabilidad**: Optimizado para redes de hasta 50 tiendas
+- **Persistencia**: Los análisis no se guardan entre sesiones
+- **Conectividad**: Requiere acceso a internet para ejecución inicial
 
 ### Mejoras Planificadas
 
@@ -594,13 +535,11 @@ Error al actualizar precio: El precio debe ser positivo, se recibió: -50.0
 - [ ] **Modelos Predictivos**: Machine Learning para proyecciones avanzadas
 - [ ] **Integración en Tiempo Real**: Conexión con sistemas operativos
 - [ ] **Análisis de Correlaciones**: Relaciones entre múltiples métricas
-
-#### **Trabajo 4: Funcionalidades Futuras**
-- [ ] **Dashboard Interactivo**: Versión web con Plotly Dash o Streamlit
-- [ ] **Análisis Predictivo**: Machine Learning para tendencias de ventas
-- [ ] **Exportación Avanzada**: PDFs, presentaciones PowerPoint automáticas
-- [ ] **Integración de Datos**: Conexión con APIs y bases de datos en tiempo real
-- [ ] **Personalización Avanzada**: Temas y estilos personalizables por usuario
+- [ ] **Alertas Automáticas**: Notificaciones de niveles críticos de inventario
+- [ ] **Reportes Personalizados**: Generación automática de informes ejecutivos
+- [ ] **Análisis Geográfico**: Mapeo de rendimiento por ubicación de tiendas
+- [ ] **Benchmarking**: Comparación con estándares de la industria
+- [ ] **API de Datos**: Interfaz para integración con otros sistemas
 
 ### Optimizaciones Técnicas Comunes
 - [ ] **Testing Automatizado**: Suite de pruebas unitarias
@@ -686,16 +625,12 @@ Curso_Python_UNIR/
 ├── trabajo_2/                          # Sistema de Inventario POO
 │   ├── trabajo_2_Sistema_Inventario_POO.py
 │   └── DOCUMENTACION_TECNICA_TRABAJO2.md
-├── trabajo_3/                          # Análisis de Red de Tiendas
-│   ├── analisis_red_tiendas.ipynb
-│   ├── ventas.csv
-│   ├── inventarios.csv
-│   ├── satisfaccion.csv
-│   └── DOCUMENTACION_TECNICA_TRABAJO3.md
-└── trabajo_4/                          # Análisis de Visualizaciones
-    ├── analisis_ventas_minoristas.py
-    ├── requirements.txt
-    └── DOCUMENTACION_TECNICA_TRABAJO4.md
+└── trabajo_3/                          # Análisis de Red de Tiendas
+    ├── analisis_red_tiendas.ipynb
+    ├── ventas.csv
+    ├── inventarios.csv
+    ├── satisfaccion.csv
+    └── DOCUMENTACION_TECNICA_TRABAJO3.md
 ```
 
 ---
@@ -722,11 +657,6 @@ cd ../trabajo_3
 pip install pandas numpy jupyter
 jupyter notebook
 # Abrir: analisis_red_tiendas.ipynb
-
-# Ejecutar Trabajo 4: Análisis de Visualizaciones
-cd ../trabajo_4
-pip install -r requirements.txt
-python analisis_ventas_minoristas.py
 ```
 
 ---

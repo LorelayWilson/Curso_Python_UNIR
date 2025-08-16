@@ -228,7 +228,7 @@ jupyter notebook
 
 ### Resumen Global de la Evaluación UNIR
 
-> **" "**
+> **"El proyecto demuestra un cumplimiento sobresaliente de todos los requisitos del enunciado, implementando de manera clara y estructurada la carga, limpieza y análisis de datos con Pandas, así como los cálculos estadísticos y simulaciones requeridas con Numpy. No se detectan errores que violen los criterios de evaluación y se observan buenas prácticas en la organización y explicación del análisis. El trabajo es profesional, completo y adecuado para el contexto académico solicitado."**
 
 ---
 
