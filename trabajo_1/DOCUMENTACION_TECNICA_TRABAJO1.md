@@ -1,6 +1,6 @@
-# 📋 Documentación Técnica - Calculadora de Promedios Escolares
+# Documentación Técnica - Calculadora de Promedios Escolares
 
-## 📑 Índice
+## Índice
 1. [Descripción General](#descripción-general)
 2. [Arquitectura del Sistema](#arquitectura-del-sistema)
 3. [Funciones Principales](#funciones-principales)
@@ -12,11 +12,11 @@
 
 ---
 
-## 🎯 Descripción General
+## Descripción General
 
 La **Calculadora de Promedios Escolares** es una aplicación Python que gestiona calificaciones académicas, calcula promedios, determina estados de aprobación/reprobación y genera reportes detallados.
 
-### ✨ Características Principales
+### Características Principales
 - **Ingreso dinámico** de materias y calificaciones
 - **Validaciones robustas** (rango 0.0 - 10.0)
 - **Umbral configurable** de aprobación
@@ -25,7 +25,7 @@ La **Calculadora de Promedios Escolares** es una aplicación Python que gestiona
 
 ---
 
-## 🏗️ Arquitectura del Sistema
+## Arquitectura del Sistema
 
 ```
 Calculadora de Promedios
@@ -46,7 +46,7 @@ Calculadora de Promedios
     └── main()
 ```
 
-### 🔧 Paradigmas Implementados
+### Paradigmas Implementados
 - **Programación Funcional**: Funciones modulares y reutilizables
 - **Validación de Datos**: Verificación exhaustiva de entradas
 - **Manejo de Estados**: Control de flujo con bucles y condicionales
@@ -54,9 +54,9 @@ Calculadora de Promedios
 
 ---
 
-## 🔧 Funciones Principales
+## Funciones Principales
 
-### 📊 **Funciones de Validación**
+### Funciones de Validación
 
 #### `validar_calificacion(nombre_materia: str) -> float`
 Solicita y valida la calificación de una materia específica.
@@ -69,7 +69,7 @@ Pregunta al usuario si desea continuar ingresando materias.
 - **Retorno**: `str` - 's' para sí, 'n' para no
 - **Funcionalidad**: Normalización de entrada, validación de respuesta
 
-### 🔄 **Funciones de Procesamiento**
+### Funciones de Procesamiento
 
 #### `ingresar_calificaciones() -> list[tuple[str, float]]`
 Coordina el ingreso de múltiples materias y calificaciones.
@@ -87,13 +87,13 @@ Clasifica las materias en aprobadas y reprobadas según el umbral.
 - **Parámetros**: `datos` - Lista de materias, `umbral` - Puntuación mínima para aprobar
 - **Retorno**: `tuple[list[int], list[int]]` - (índices_aprobadas, índices_reprobadas)
 
-### 📋 **Funciones de Presentación**
+### Funciones de Presentación
 
 #### `mostrar_resumen(datos, promedio, aprobadas, reprobadas, umbral) -> None`
 Genera y muestra un reporte completo de las calificaciones.
 - **Funcionalidad**: Encabezado, lista numerada, estadísticas, clasificación, extremos
 
-### 🎯 **Función Principal**
+### Función Principal
 
 #### `main() -> None`
 Coordina toda la ejecución del programa.
@@ -101,13 +101,13 @@ Coordina toda la ejecución del programa.
 
 ---
 
-## 💻 Instalación y Ejecución
+## Instalación y Ejecución
 
-### 📋 **Requisitos Previos**
+### Requisitos Previos
 - Python 3.6 o superior
 - Acceso a terminal o línea de comandos
 
-### 🚀 **Ejecución Directa**
+### Ejecución Directa
 ```bash
 # Navegar al directorio del trabajo
 cd trabajo_1
@@ -116,7 +116,7 @@ cd trabajo_1
 python trabajo_1_sintaxis_python.py
 ```
 
-### 🔧 **Verificación de Instalación**
+### Verificación de Instalación
 ```bash
 # Verificar versión de Python
 python --version
@@ -127,9 +127,9 @@ dir trabajo_1_sintaxis_python.py
 
 ---
 
-## 📖 Ejemplos de Uso
+## Ejemplos de Uso
 
-### 🎓 **Ejemplo 1: Ingreso Básico de Materias**
+### Ejemplo 1: Ingreso Básico de Materias
 ```
 === Calculadora de Promedios Escolares ===
 Introduce el umbral de aprobación (presiona Enter para usar 5.0): 
@@ -162,7 +162,7 @@ Materia con peor calificación:
   - Historia (7.00)
 ```
 
-### ⚙️ **Ejemplo 2: Umbral Personalizado**
+### Ejemplo 2: Umbral Personalizado
 ```
 === Calculadora de Promedios Escolares ===
 Introduce el umbral de aprobación (presiona Enter para usar 5.0): 7.0
@@ -186,9 +186,9 @@ Materias reprobadas:
 
 ---
 
-## 🏆 Criterios de Evaluación UNIR
+## Criterios de Evaluación UNIR
 
-### 📊 **Calificación Final: 10/10 (100%)**
+### Calificación Final: 10/10 (100%)
 
 | **Criterio** | **Peso** | **Calificación** | **Estado** |
 |:-------------|:--------:|:----------------:|:----------:|
@@ -197,35 +197,35 @@ Materias reprobadas:
 | **Cálculos y lógica** | 25% | 10/10 | ✅ **Perfecto** |
 | **Validación de entrada y manejo de errores** | 20% | 10/10 | ✅ **Perfecto** |
 
-### 🎯 **Criterios Cumplidos**
+### Criterios Cumplidos
 
-#### ✅ **Criterio 1: Implementación de funciones y estructura (30%)**
+#### ✅ Criterio 1: Implementación de funciones y estructura (30%)
 - **Funciones implementadas**: `ingresar_calificaciones()`, `calcular_promedio()`, `determinar_estado()`, `encontrar_extremos()`
 - **Organización**: Código sin POO, modular y bien estructurado
 - **Separación de responsabilidades**: Cada función tiene un propósito específico
 
-#### ✅ **Criterio 2: Manejo de estructuras de datos (25%)**
+#### ✅ Criterio 2: Manejo de estructuras de datos (25%)
 - **Listas**: Uso adecuado para almacenar materias y calificaciones
 - **Indexación**: Acceso correcto a elementos por índice
 - **Estructura compuesta**: Lista de tuplas (materia, calificación)
 
-#### ✅ **Criterio 3: Cálculos y lógica (25%)**
+#### ✅ Criterio 3: Cálculos y lógica (25%)
 - **Promedio**: Cálculo aritmético correcto y preciso
 - **Clasificación**: Determinación de aprobados/reprobados por umbral
 - **Extremos**: Identificación de calificaciones máxima y mínima
 
-#### ✅ **Criterio 4: Validación de entrada y manejo de errores (20%)**
+#### ✅ Criterio 4: Validación de entrada y manejo de errores (20%)
 - **Rango**: Validación de calificaciones entre 0.0 y 10.0
 - **Tipos**: Conversión segura string → float
 - **Casos especiales**: Manejo de listas vacías y entradas vacías
 
-### 🌟 **Resumen Global de la Evaluación UNIR**
+### Resumen Global de la Evaluación UNIR
 
 > **"El proyecto cumple de manera sobresaliente con todos los requisitos funcionales y estructurales establecidos en el enunciado. La implementación es clara, modular y robusta, con validaciones adecuadas y manejo correcto de estructuras de datos. No se detectan errores que violen los requisitos y se observan buenas prácticas en la organización y control de flujo. El código es fácilmente mantenible y extensible, demostrando un dominio sólido de la programación estructurada en Python."**
 
 ---
 
-## 🎉 **Conclusión**
+## Conclusión
 
 El **Trabajo 1 - Calculadora de Promedios Escolares** representa una implementación completa y profesional de la programación estructurada en Python, cumpliendo con todos los requisitos académicos establecidos por UNIR. 
 
@@ -239,34 +239,34 @@ La calculadora proporciona **funcionalidad robusta** para la gestión académica
 
 ---
 
-## 👩‍💻 Autoría y Contexto
+## Autoría y Contexto
 
-### 🌟 **Desarrolladora**
+### Desarrolladora
 **Lorelay Pricop Florescu**
-- **🎓 Titulación**: Graduada en Tecnología Interactiva
-- **💼 Perfil Profesional**: Tecnóloga y Project Manager
-- **📚 Formación Actual**: Máster Universitario en Inteligencia Artificial
-- **🎯 Especialidad**: IA Generativa para Aplicaciones Empresariales
-- **🏛️ Universidad**: UNIR (Universidad Internacional de La Rioja)
+- **Titulación**: Graduada en Tecnología Interactiva
+- **Perfil Profesional**: Tecnóloga y Project Manager
+- **Formación Actual**: Máster Universitario en Inteligencia Artificial
+- **Especialidad**: IA Generativa para Aplicaciones Empresariales
+- **Universidad**: UNIR (Universidad Internacional de La Rioja)
 
-### 📞 **Contacto Profesional**
+### Contacto Profesional
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Lorelay%20Pricop-0077b5?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/lorelaypricop)
 [![Email](https://img.shields.io/badge/Email-lorelaypricop@gmail.com-d14836?style=flat-square&logo=gmail)](mailto:lorelaypricop@gmail.com)
 
-### 🎓 **Contexto Académico**
-- **🏫 Institución**: Universidad Internacional de La Rioja (UNIR)
-- **📚 Programa**: Máster Universitario en Inteligencia Artificial
-- **🎯 Curso**: Programación en Python
-- **📅 Período**: Agosto 2025
-- **�� Trabajo**: Trabajo 1 - Calculadora de Promedios Escolares
+### Contexto Académico
+- **Institución**: Universidad Internacional de La Rioja (UNIR)
+- **Programa**: Máster Universitario en Inteligencia Artificial
+- **Curso**: Programación en Python
+- **Período**: Agosto 2025
+- **Trabajo**: Trabajo 1 - Calculadora de Promedios Escolares
 
-### 🤖 **Transparencia en el Uso de IA**
-- **💻 Código Fuente**: Desarrollado íntegramente por la autora
-- **📊 Lógica y Algoritmos**: Diseño e implementación original
-- **🎨 Documentación**: Elaborada con asistencia de IA Generativa para formato y presentación
-- **🔍 Contenido Técnico**: Validado y verificado por la autora
+### Transparencia en el Uso de IA
+- **Código Fuente**: Desarrollado íntegramente por la autora
+- **Lógica y Algoritmos**: Diseño e implementación original
+- **Documentación**: Elaborada con asistencia de IA Generativa para formato y presentación
+- **Contenido Técnico**: Validado y verificado por la autora
 
-### 📄 **Licencia**
+### Licencia
 **© Agosto 2025 - Lorelay Pricop Florescu**  
 *Licencia Académica - Todos los derechos reservados*
 
@@ -274,10 +274,8 @@ La calculadora proporciona **funcionalidad robusta** para la gestión académica
 
 <div align="center">
 
-**🎓 Calculadora de Promedios Escolares - UNIR**  
+**Calculadora de Promedios Escolares - UNIR**  
 *Proyecto académico del Máster en Inteligencia Artificial*
-
-[📋 **Documentación Técnica**](DOCUMENTACION_TECNICA_TRABAJO1.md) • [📊 **Resumen Ejecutivo**](RESUMEN_EJECUTIVO_TRABAJO1.md) • [📖 **README Principal**](../README.md)
 
 ---
 

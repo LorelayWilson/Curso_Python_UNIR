@@ -1,4 +1,4 @@
-# 🎓 Curso de Programación en Python - UNIR
+# Curso de Programación en Python - UNIR
 
 <div align="center">
 
@@ -13,36 +13,38 @@
 
 ---
 
-[🚀 **Inicio Rápido**](#-inicio-rápido) • [📚 **Documentación**](#-documentación) • [💻 **Características**](#-características) • [🎯 **Instalación**](#-instalación) • [👩‍💻 **Autoría**](#-autoría)
+[**Inicio Rápido**](#inicio-rápido) • [**Documentación**](#documentación) • [**Características**](#características) • [**Instalación**](#instalación) • [**Autoría**](#autoría)
 
 </div>
 
 ---
 
-## 📋 Descripción del Portafolio
+## Descripción del Portafolio
 
 Este repositorio contiene una **colección completa de proyectos académicos** desarrollados en Python como parte del Máster Universitario en Inteligencia Artificial de la UNIR. Cada proyecto demuestra diferentes aspectos de la programación en Python, desde conceptos básicos hasta paradigmas avanzados.
 
-### 🎯 **Proyectos Incluidos**
+### Proyectos Incluidos
 
 - ✅ **Trabajo 1**: Calculadora de Promedios Escolares - Sintaxis y Estructuras Básicas
 - ✅ **Trabajo 2**: Sistema de Inventario POO - Programación Orientada a Objetos
+- ✅ **Trabajo 3**: Análisis de Red de Tiendas - Pandas y Numpy para Análisis de Datos
+- ✅ **Trabajo 4**: Análisis de Visualizaciones - Matplotlib y Seaborn para Visualización de Datos
 - ✅ **Documentación Completa**: Cada proyecto incluye documentación técnica exhaustiva
 - ✅ **Estándares Profesionales**: Código limpio, validaciones robustas y manejo de errores
 
 ---
 
-## 🚀 Inicio Rápido
+## Inicio Rápido
 
-### 📥 **Clonar el Repositorio**
+### Clonar el Repositorio
 ```bash
 git clone <URL_DEL_REPOSITORIO>
 cd Curso_Python_UNIR
 ```
 
-### 🐍 **Ejecutar los Proyectos**
+### Ejecutar los Proyectos
 
-#### **📚 Trabajo 1: Calculadora de Promedios**
+#### **Trabajo 1: Calculadora de Promedios**
 ```bash
 # Navegar al directorio del trabajo
 cd trabajo_1
@@ -51,7 +53,7 @@ cd trabajo_1
 python trabajo_1_sintaxis_python.py
 ```
 
-#### **🏪 Trabajo 2: Sistema de Inventario**
+#### **Trabajo 2: Sistema de Inventario**
 ```bash
 # Navegar al directorio del trabajo
 cd trabajo_2
@@ -60,45 +62,93 @@ cd trabajo_2
 python trabajo_2_Sistema_Inventario_POO.py
 ```
 
-### 🎮 **Uso Básico**
+#### **Trabajo 3: Análisis de Red de Tiendas**
+```bash
+# Navegar al directorio del trabajo
+cd trabajo_3
+
+# Instalar dependencias
+pip install pandas numpy jupyter
+
+# Ejecutar el notebook
+jupyter notebook
+# Abrir: analisis_red_tiendas.ipynb
+```
+
+#### **Trabajo 4: Análisis de Visualizaciones**
+```bash
+# Navegar al directorio del trabajo
+cd trabajo_4
+
+# Instalar dependencias
+pip install -r requirements.txt
+
+# Ejecutar el análisis completo
+python analisis_ventas_minoristas.py
+```
+
+### Uso Básico
 ```python
 # Trabajo 1: Sigue las instrucciones para ingresar materias y calificaciones
 # Trabajo 2: Selecciona las opciones del 1 al 9 en el menú interactivo
+# Trabajo 3: Ejecuta las celdas del notebook para análisis de datos
+# Trabajo 4: El script ejecuta automáticamente todas las visualizaciones
 ```
 
 ---
 
-## 💻 Características del Portafolio
+## Características del Portafolio
 
-### 🔧 **Trabajo 1: Calculadora de Promedios Escolares**
+### Trabajo 1: Calculadora de Promedios Escolares
 | **Funcionalidad** | **Descripción** | **Estado** |
 |:---|:---|:---:|
-| 📊 **Ingreso Dinámico** | Número ilimitado de materias y calificaciones | ✅ |
-| 🎯 **Validaciones Robustas** | Rango 0.0 - 10.0 con reintentos automáticos | ✅ |
-| 📈 **Cálculos Automáticos** | Promedio aritmético y clasificación por estado | ✅ |
-| ⚙️ **Umbral Configurable** | Personalizable por el usuario | ✅ |
-| 📋 **Reportes Detallados** | Análisis completo con formato profesional | ✅ |
+| **Ingreso Dinámico** | Número ilimitado de materias y calificaciones | ✅ |
+| **Validaciones Robustas** | Rango 0.0 - 10.0 con reintentos automáticos | ✅ |
+| **Cálculos Automáticos** | Promedio aritmético y clasificación por estado | ✅ |
+| **Umbral Configurable** | Personalizable por el usuario | ✅ |
+| **Reportes Detallados** | Análisis completo con formato profesional | ✅ |
 
-### 🏪 **Trabajo 2: Sistema de Inventario POO**
+### Trabajo 2: Sistema de Inventario POO
 | **Funcionalidad** | **Descripción** | **Estado** |
 |:---|:---|:---:|
-| ➕ **CRUD Completo** | Agregar, buscar, actualizar y eliminar productos | ✅ |
-| 🛡️ **Validaciones Avanzadas** | Tipos de datos, rangos y lógica de negocio | ✅ |
-| 💰 **Gestión Financiera** | Cálculo de valores por producto e inventario total | ✅ |
-| ⚙️ **Configuración Inteligente** | Modo automático/manual para duplicados | ✅ |
-| 🎨 **Interfaz Profesional** | Menú interactivo con 9 opciones | ✅ |
+| **CRUD Completo** | Agregar, buscar, actualizar y eliminar productos | ✅ |
+| **Validaciones Avanzadas** | Tipos de datos, rangos y lógica de negocio | ✅ |
+| **Gestión Financiera** | Cálculo de valores por producto e inventario total | ✅ |
+| **Configuración Inteligente** | Modo automático/manual para duplicados | ✅ |
+| **Interfaz Profesional** | Menú interactivo con 9 opciones | ✅ |
 
-### 🎨 **Características Comunes**
-- **📚 Documentación Exhaustiva**: Cada proyecto incluye documentación técnica completa
-- **🛡️ Manejo de Errores**: Sistemas robustos de validación y recuperación
-- **🎯 Estándares de Calidad**: Código limpio siguiendo PEP 8 y mejores prácticas
-- **📊 Métricas de Calidad**: Análisis detallado de funcionalidades y código
+### Trabajo 3: Análisis de Red de Tiendas
+| **Funcionalidad** | **Descripción** | **Estado** |
+|:---|:---|:---:|
+| **Carga de Datos** | Lectura y limpieza de archivos CSV | ✅ |
+| **Análisis de Ventas** | Cálculo de totales por producto, tienda y categoría | ✅ |
+| **Gestión de Inventarios** | Rotación y niveles críticos | ✅ |
+| **Satisfacción del Cliente** | Evaluación y correlación con rendimiento | ✅ |
+| **Estadísticas con Numpy** | Mediana, desviación estándar y simulaciones | ✅ |
+| **Proyecciones Futuras** | Simulación de ventas para 3 meses | ✅ |
+
+### Trabajo 4: Análisis de Visualizaciones
+| **Funcionalidad** | **Descripción** | **Estado** |
+|:---|:---|:---:|
+| **Visualizaciones Matplotlib** | Gráficos univariantes, bivariantes y personalización | ✅ |
+| **Visualizaciones Seaborn** | Boxplots, violinplots, heatmaps y pairplots | ✅ |
+| **Dashboard Integrado** | 12 visualizaciones organizadas profesionalmente | ✅ |
+| **Análisis Automático** | Exploración y preparación automática de datos | ✅ |
+| **Guardado Automático** | Todas las visualizaciones en PNG de alta resolución | ✅ |
+| **Insights Automáticos** | Conclusiones y recomendaciones basadas en datos | ✅ |
+
+### Características Comunes
+- **Documentación Exhaustiva**: Cada proyecto incluye documentación técnica completa
+- **Manejo de Errores**: Sistemas robustos de validación y recuperación
+- **Estándares de Calidad**: Código limpio siguiendo PEP 8 y mejores prácticas
+- **Métricas de Calidad**: Análisis detallado de funcionalidades y código
 
 ---
 
-## 🏗️ Arquitectura de los Proyectos
+## Arquitectura de los Proyectos
 
-### 📊 **Trabajo 1: Arquitectura Funcional**
+### Trabajo 1: Calculadora de Promedios Escolares
+#### **Arquitectura del Sistema**
 ```mermaid
 graph TD
     A[Usuario] --> B[Configuración Umbral]
@@ -112,7 +162,20 @@ graph TD
     H -->|No| I[Mostrar Resumen Final]
 ```
 
-### 🏪 **Trabajo 2: Arquitectura POO**
+#### **Flujo de Datos**
+```mermaid
+graph TD
+    A[Entrada de Calificaciones] --> B[Validación de Rangos]
+    B --> C[Cálculo de Promedio]
+    C --> D[Clasificación Académica]
+    D --> E[Generación de Estadísticas]
+    E --> F[Reporte Final]
+```
+
+---
+
+### Trabajo 2: Sistema de Inventario POO
+#### **Arquitectura de Clases**
 ```mermaid
 classDiagram
     class Producto {
@@ -144,9 +207,7 @@ classDiagram
     Inventario "1" *-- "*" Producto : contiene
 ```
 
-> **💡 Funcionalidades Extra**: El sistema incluye características adicionales como exportación, ordenamiento avanzado y actualización simultánea de atributos, que enriquecen la experiencia sin ser requeridas por el enunciado.
-
-### 🔄 **Flujo de Operaciones del Sistema de Inventario**
+#### **Flujo de Operaciones**
 ```mermaid
 graph TD
     A[Usuario] --> B[Menú Principal]
@@ -163,43 +224,112 @@ graph TD
     G --> L[Archivo de Texto]
 ```
 
+> **Funcionalidades Extra**: El sistema incluye características adicionales como exportación, ordenamiento avanzado y actualización simultánea de atributos, que enriquecen la experiencia sin ser requeridas por el enunciado.
+
 ---
 
-## 📚 Documentación
+### Trabajo 3: Análisis de Red de Tiendas
+#### **Arquitectura del Sistema**
+```mermaid
+graph TD
+    A[Datos CSV] --> B[Carga con Pandas]
+    B --> C[Limpieza de Datos]
+    C --> D[Análisis de Ventas]
+    D --> E[Análisis de Inventarios]
+    E --> F[Análisis de Satisfacción]
+    F --> G[Cálculos con Numpy]
+    G --> H[Simulaciones Futuras]
+    H --> I[Visualizaciones]
+    I --> J[Generación de Reportes]
+    J --> K[Recomendaciones Estratégicas]
+```
 
-### 📄 **Archivos Disponibles**
+#### **Flujo de Análisis**
+```mermaid
+graph TD
+    A[Dataset Original] --> B[Preprocesamiento]
+    B --> C[Análisis Exploratorio]
+    C --> D[Análisis Estadístico]
+    D --> E[Generación de Insights]
+    E --> F[Reporte Final]
+```
+
+---
+
+### Trabajo 4: Análisis de Visualizaciones
+#### **Arquitectura del Sistema**
+```mermaid
+graph TD
+    A[Descarga Dataset] --> B[Carga y Preparación]
+    B --> C[Análisis Exploratorio]
+    C --> D[Generación Matplotlib]
+    C --> E[Generación Seaborn]
+    C --> F[Creación Dashboard]
+    D --> G[Guardado PNG]
+    E --> G
+    F --> G
+    G --> H[Análisis y Conclusiones]
+    H --> I[Reporte Final]
+```
+
+#### **Flujo de Visualizaciones**
+```mermaid
+graph TD
+    A[Dataset Superstore] --> B[Preparación de Datos]
+    B --> C[Visualizaciones Univariantes]
+    B --> D[Visualizaciones Bivariantes]
+    B --> E[Visualizaciones Multivariantes]
+    C --> F[Dashboard Integrado]
+    D --> F
+    E --> F
+    F --> G[Guardado de Imágenes]
+    G --> H[Análisis Automático]
+    H --> I[Conclusiones]
+```
+
+---
+
+## Documentación
+
+### Archivos Disponibles
 
 | **Documento** | **Descripción** | **Propósito** |
 |:---|:---|:---:|
-| 📋 **README.md** | Este archivo | Presentación del portafolio |
-| 🎯 **trabajo_1/** | Calculadora de Promedios Escolares | Proyecto de sintaxis básica |
-| 🏪 **trabajo_2/** | Sistema de Inventario POO | Proyecto de programación orientada a objetos |
+| **README.md** | Este archivo | Presentación del portafolio |
+| **trabajo_1/** | Calculadora de Promedios Escolares | Proyecto de sintaxis básica |
+| **trabajo_2/** | Sistema de Inventario POO | Proyecto de programación orientada a objetos |
+| **trabajo_3/** | Análisis de Red de Tiendas | Proyecto de análisis de datos con Pandas y Numpy |
+| **trabajo_4/** | Análisis de Visualizaciones | Proyecto de visualización con Matplotlib y Seaborn |
 
-### 🔍 **Documentación por Proyecto**
+### Documentación por Proyecto
 
-#### **📚 Trabajo 1: Calculadora de Promedios**
-- **📖 Documentación Técnica**: `trabajo_1/DOCUMENTACION_TECNICA_TRABAJO1.md`
-- **📊 Resumen Ejecutivo**: `trabajo_1/RESUMEN_EJECUTIVO_TRABAJO1.md`
-- **🚀 Guía Rápida**: `trabajo_1/INSTRUCCIONES_RAPIDAS.md`
-- **💻 Código Fuente**: `trabajo_1/trabajo_1_sintaxis_python.py`
+#### **Trabajo 1: Calculadora de Promedios**
+- **Documentación Técnica**: `trabajo_1/DOCUMENTACION_TECNICA_TRABAJO1.md`
+- **Código Fuente**: `trabajo_1/trabajo_1_sintaxis_python.py`
 
-#### **🏪 Trabajo 2: Sistema de Inventario**
-- **📖 Documentación Técnica**: `trabajo_2/DOCUMENTACION_TECNICA_TRABAJO2.md`
-- **📊 Resumen Ejecutivo**: `trabajo_2/RESUMEN_EJECUTIVO_TRABAJO2.md`
-- **🚀 Guía Rápida**: `trabajo_2/INSTRUCCIONES_RAPIDAS.md`
-- **💻 Código Fuente**: `trabajo_2/trabajo_2_Sistema_Inventario_POO.py`
+#### **Trabajo 2: Sistema de Inventario**
+- **Documentación Técnica**: `trabajo_2/DOCUMENTACION_TECNICA_TRABAJO2.md`
+- **Código Fuente**: `trabajo_2/trabajo_2_Sistema_Inventario_POO.py`
+
+#### **Trabajo 3: Análisis de Red de Tiendas**
+- **Documentación Técnica**: `trabajo_3/DOCUMENTACION_TECNICA_TRABAJO3.md`
+- **Código Fuente**: `trabajo_3/analisis_red_tiendas.ipynb`
+
+#### **Trabajo 4: Análisis de Visualizaciones**
+- **Documentación Técnica**: `trabajo_4/DOCUMENTACION_TECNICA_TRABAJO4.md`
+- **Código Fuente**: `trabajo_4/analisis_ventas_minoristas.py`
 
 ---
 
-## 🎯 Instalación
+## Instalación
 
-### 📋 **Requisitos Previos**
+### Requisitos Previos
 - **Python**: 3.6 o superior
 - **Sistema Operativo**: Windows, macOS, Linux
 - **Memoria**: 128 MB disponible
 - **Almacenamiento**: 1 MB
 
-### 🔧 **Pasos de Instalación**
+### Pasos de Instalación
 
 #### **1. Verificar Python**
 ```bash
@@ -221,12 +351,27 @@ git clone <URL_DEL_REPOSITORIO>
 cd Curso_Python_UNIR
 ```
 
-#### **4. Ejecutar el Sistema**
+#### **4. Ejecutar los Proyectos**
 ```bash
+# Trabajo 1: Calculadora de Promedios
+python trabajo_1/trabajo_1_sintaxis_python.py
+
+# Trabajo 2: Sistema de Inventario
 python trabajo_2/trabajo_2_Sistema_Inventario_POO.py
+
+# Trabajo 3: Análisis de Red de Tiendas
+cd trabajo_3
+pip install pandas numpy jupyter
+jupyter notebook
+# Abrir: analisis_red_tiendas.ipynb
+
+# Trabajo 4: Análisis de Visualizaciones
+cd ../trabajo_4
+pip install -r requirements.txt
+python analisis_ventas_minoristas.py
 ```
 
-### 🚨 **Solución de Problemas Comunes**
+### Solución de Problemas Comunes
 
 | **Error** | **Solución** |
 |:---|:---|
@@ -236,9 +381,9 @@ python trabajo_2/trabajo_2_Sistema_Inventario_POO.py
 
 ---
 
-## 🧪 Ejemplos de Uso
+## Ejemplos de Uso
 
-### 📚 **Trabajo 1: Calculadora de Promedios**
+### Trabajo 1: Calculadora de Promedios
 ```bash
 # Ejecutar el programa
 python trabajo_1/trabajo_1_sintaxis_python.py
@@ -251,7 +396,7 @@ python trabajo_1/trabajo_1_sintaxis_python.py
 # 5. Ver resumen completo con análisis
 ```
 
-### 🏪 **Trabajo 2: Sistema de Inventario**
+### Trabajo 2: Sistema de Inventario
 ```bash
 # Ejecutar el sistema
 python trabajo_2/trabajo_2_Sistema_Inventario_POO.py
@@ -267,9 +412,38 @@ python trabajo_2/trabajo_2_Sistema_Inventario_POO.py
 # 9. Salir
 ```
 
-### 💡 **Datos de Prueba Sugeridos**
+### Trabajo 3: Análisis de Red de Tiendas
+```bash
+# Ejecutar el notebook
+cd trabajo_3
+pip install pandas numpy jupyter
+jupyter notebook
 
-#### **📚 Trabajo 1: Calificaciones**
+# Seguir el análisis:
+# 1. Abrir: analisis_red_tiendas.ipynb
+# 2. Ejecutar celdas secuencialmente
+# 3. Revisar análisis de ventas, inventarios y satisfacción
+# 4. Analizar simulaciones y proyecciones futuras
+```
+
+### Trabajo 4: Análisis de Visualizaciones
+```bash
+# Ejecutar el análisis completo
+cd trabajo_4
+pip install -r requirements.txt
+python analisis_ventas_minoristas.py
+
+# El script ejecuta automáticamente:
+# 1. Descarga del dataset superstore_dataset2012.csv
+# 2. Generación de visualizaciones univariantes, bivariantes y multivariantes
+# 3. Creación del dashboard integrado
+# 4. Guardado de todas las imágenes en PNG
+# 5. Análisis automático y conclusiones
+```
+
+### Datos de Prueba Sugeridos
+
+#### **Trabajo 1: Calificaciones**
 ```
 Materia 1: Matemáticas, 8.5
 Materia 2: Historia, 7.0
@@ -278,7 +452,7 @@ Materia 4: Literatura, 6.8
 Materia 5: Química, 8.9
 ```
 
-#### **🏪 Trabajo 2: Productos**
+#### **Trabajo 2: Productos**
 ```
 Producto 1: Laptop Dell, $1200.50, 10 unidades
 Producto 2: Mouse Inalámbrico, $25.99, 50 unidades
@@ -287,22 +461,44 @@ Producto 4: Monitor 24" 4K, $299.99, 15 unidades
 Producto 5: Webcam HD, $79.99, 30 unidades
 ```
 
+#### **Trabajo 3: Datos de Red de Tiendas**
+```
+Archivos CSV incluidos en trabajo_3/:
+- ventas.csv: Producto, Tienda, Cantidad, Precio_Unitario, Fecha
+- inventarios.csv: Producto, Tienda, Stock_Actual, Stock_Minimo, Fecha
+- satisfaccion.csv: Tienda, Puntuacion, Num_Clientes, Fecha
+
+Ejemplo de datos de ventas:
+Producto: Laptop, Tienda: Centro, Cantidad: 15, Precio: 1200, Fecha: 2024-01-15
+Producto: Mouse, Tienda: Norte, Cantidad: 50, Precio: 25, Fecha: 2024-01-15
+Producto: Teclado, Tienda: Sur, Cantidad: 30, Precio: 89, Fecha: 2024-01-15
+```
+
+#### **Trabajo 4: Dataset de Visualizaciones**
+```
+El script descarga automáticamente el dataset superstore_dataset2012.csv
+Contiene datos de ventas minoristas con columnas:
+- Order Date, Ship Date, Customer ID, Product Name
+- Sales, Quantity, Discount, Profit
+- Category, Sub-Category, Region, State
+```
+
 ---
 
-## 🛡️ Manejo de Errores
+## Manejo de Errores
 
-### 🔍 **Tipos de Validación**
+### Tipos de Validación
 - **Nivel 1**: Validación de tipos de datos
 - **Nivel 2**: Validación de rangos de valores
 - **Nivel 3**: Validación de lógica de negocio
 
-### 🚨 **Excepciones Manejadas**
+### Excepciones Manejadas
 - `ValueError`: Valores fuera de rango
 - `TypeError`: Tipos de datos incorrectos
 - `KeyboardInterrupt`: Interrupción del usuario
 - `Exception`: Errores inesperados
 
-### 📢 **Mensajes de Error**
+### Mensajes de Error
 ```
 Error: Debe ingresar un número decimal válido. Valor ingresado: 'abc'
 Error al actualizar precio: El precio debe ser positivo, se recibió: -50.0
@@ -310,9 +506,9 @@ Error al actualizar precio: El precio debe ser positivo, se recibió: -50.0
 
 ---
 
-## 📊 Métricas del Portafolio
+## Métricas del Portafolio
 
-### 📚 **Trabajo 1: Calculadora de Promedios**
+### Trabajo 1: Calculadora de Promedios
 | **Métrica** | **Valor** | **Categoría** |
 |:---|---:|:---|
 | **Líneas de Código** | 132 | Implementación |
@@ -321,7 +517,7 @@ Error al actualizar precio: El precio debe ser positivo, se recibió: -50.0
 | **Complejidad Ciclomática** | Baja | Calidad |
 | **Mantenibilidad** | Alta | Calidad |
 
-### 🏪 **Trabajo 2: Sistema de Inventario**
+### Trabajo 2: Sistema de Inventario
 | **Métrica** | **Valor** | **Categoría** |
 |:---|---:|:---|
 | **Líneas de Código** | 493 | Implementación |
@@ -331,48 +527,82 @@ Error al actualizar precio: El precio debe ser positivo, se recibió: -50.0
 | **Opciones de Menú** | 9 | Interfaz |
 | **Cobertura de Validaciones** | 100% | Calidad |
 
-### 📈 **Métricas Generales**
+### Trabajo 3: Análisis de Red de Tiendas
 | **Métrica** | **Valor** | **Categoría** |
 |:---|---:|:---|
-| **Total de Líneas** | 625+ | Implementación |
-| **Proyectos Completados** | 2 | Portafolio |
-| **Documentación Generada** | 8 archivos | Documentación |
+| **Celdas del Notebook** | 15 | Implementación |
+| **Archivos CSV** | 3 | Datos |
+| **Librerías Utilizadas** | 4 | Tecnología |
+| **Análisis Implementados** | 4 | Funcionalidad |
+| **Visualizaciones** | 4 | Presentación |
+| **Cumplimiento UNIR** | 100% | Calidad |
+
+### Trabajo 4: Análisis de Visualizaciones
+| **Métrica** | **Valor** | **Categoría** |
+|:---|---:|:---|
+| **Líneas de Código** | 450+ | Implementación |
+| **Funciones Principales** | 8 | Funcionalidad |
+| **Tipos de Gráficos** | 12+ | Visualización |
+| **Librerías Utilizadas** | 4 | Tecnología |
+| **Imágenes Generadas** | 6 archivos PNG | Presentación |
+| **Cumplimiento UNIR** | 100% | Calidad |
+
+### Métricas Generales
+| **Métrica** | **Valor** | **Categoría** |
+|:---|---:|:---|
+| **Total de Líneas** | 1000+ | Implementación |
+| **Proyectos Completados** | 4 | Portafolio |
+| **Documentación Generada** | 4 archivos | Documentación |
 | **Cobertura de Funcionalidades** | 100% | Calidad |
 | **Estándares de Código** | PEP 8 | Calidad |
 
 ---
 
-## 🔮 Roadmap y Mejoras Futuras
+## Roadmap y Mejoras Futuras
 
-### 🚧 **Limitaciones Actuales**
+### Limitaciones Actuales
 
-#### **📚 Trabajo 1: Calculadora de Promedios**
+#### **Trabajo 1: Calculadora de Promedios**
 - **Persistencia**: Los datos no se guardan entre sesiones
 - **Interfaz**: Solo consola, sin interfaz gráfica
 - **Historial**: No hay seguimiento temporal de calificaciones
 
-#### **🏪 Trabajo 2: Sistema de Inventario**
+#### **Trabajo 2: Sistema de Inventario**
 - **Persistencia**: Los datos no se guardan entre sesiones
 - **Escalabilidad**: Optimizado para inventarios pequeños a medianos
 - **Concurrencia**: Diseñado para un solo usuario
 
-### 🎯 **Mejoras Planificadas**
+### Mejoras Planificadas
 
-#### **📚 Trabajo 1: Funcionalidades Futuras**
+#### **Trabajo 1: Funcionalidades Futuras**
 - [ ] **Persistencia de Datos**: Guardado en archivos CSV/JSON
 - [ ] **Gráficos Estadísticos**: Visualización de calificaciones
 - [ ] **Historial Académico**: Seguimiento temporal de notas
 - [ ] **Exportación de Reportes**: Generación de PDFs
 - [ ] **Interfaz Web**: Versión con interfaz gráfica
 
-#### **🏪 Trabajo 2: Funcionalidades Futuras**
+#### **Trabajo 2: Funcionalidades Futuras**
 - [ ] **Persistencia de Datos**: Almacenamiento en archivos JSON/CSV
 - [ ] **Interfaz Gráfica**: GUI con tkinter o PyQt
 - [ ] **API REST**: Servicios web para integración
 - [ ] **Reportes Avanzados**: Estadísticas y análisis detallados
 - [ ] **Gestión de Categorías**: Organización por tipos de productos
 
-### 🛠️ **Optimizaciones Técnicas Comunes**
+#### **Trabajo 3: Funcionalidades Futuras**
+- [ ] **Análisis de Series Temporales**: Implementar tendencias y estacionalidad
+- [ ] **Dashboard Interactivo**: Interfaz web para monitoreo continuo
+- [ ] **Modelos Predictivos**: Machine Learning para proyecciones avanzadas
+- [ ] **Integración en Tiempo Real**: Conexión con sistemas operativos
+- [ ] **Análisis de Correlaciones**: Relaciones entre múltiples métricas
+
+#### **Trabajo 4: Funcionalidades Futuras**
+- [ ] **Dashboard Interactivo**: Versión web con Plotly Dash o Streamlit
+- [ ] **Análisis Predictivo**: Machine Learning para tendencias de ventas
+- [ ] **Exportación Avanzada**: PDFs, presentaciones PowerPoint automáticas
+- [ ] **Integración de Datos**: Conexión con APIs y bases de datos en tiempo real
+- [ ] **Personalización Avanzada**: Temas y estilos personalizables por usuario
+
+### Optimizaciones Técnicas Comunes
 - [ ] **Testing Automatizado**: Suite de pruebas unitarias
 - [ ] **Logging Avanzado**: Sistema de registro mejorado
 - [ ] **Configuración Externa**: Archivos de configuración separados
@@ -381,57 +611,50 @@ Error al actualizar precio: El precio debe ser positivo, se recibió: -50.0
 
 ---
 
-## 👩‍💻 Autoría
+## Autoría
 
-### 🌟 **Desarrolladora**
+### Desarrolladora
 **Lorelay Pricop Florescu**
-- **🎓 Titulación**: Graduada en Tecnología Interactiva
-- **💼 Perfil Profesional**: Tecnóloga y Project Manager
-- **📚 Formación Actual**: Máster Universitario en Inteligencia Artificial
-- **🎯 Especialidad**: IA Generativa para Aplicaciones Empresariales
-- **🏛️ Universidad**: UNIR (Universidad Internacional de La Rioja)
+- **Titulación**: Graduada en Tecnología Interactiva
+- **Perfil Profesional**: Tecnóloga y Project Manager
+- **Formación Actual**: Máster Universitario en Inteligencia Artificial
+- **Especialidad**: IA Generativa para Aplicaciones Empresariales
+- **Universidad**: UNIR (Universidad Internacional de La Rioja)
 
-### 📞 **Contacto Profesional**
+### Contacto Profesional
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Lorelay%20Pricop-0077b5?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/lorelaypricop)
 [![Email](https://img.shields.io/badge/Email-lorelaypricop@gmail.com-d14836?style=flat-square&logo=gmail)](mailto:lorelaypricop@gmail.com)
 
 ---
 
-## 🎓 Contexto Académico
+## Contexto Académico
 
-### 📖 **Información del Curso**
-- **🏫 Institución**: Universidad Internacional de La Rioja (UNIR)
-- **📚 Programa**: Máster Universitario en Inteligencia Artificial
-- **🎯 Curso**: Programación en Python
-- **📅 Período**: Agosto 2025
-- **📋 Trabajo**: Trabajo 2 - Sistema de Inventario POO
-
-### 🏆 **Criterios de Evaluación Cumplidos**
-- ✅ **Clase Producto (30%)**: Constructor, validaciones, métodos, representación
-- ✅ **Clase Inventario (30%)**: CRUD completo, búsqueda, cálculos
-- ✅ **Manejo de Excepciones (20%)**: Try-catch, validaciones, recuperación
-- ✅ **Interfaz de Usuario (20%)**: Menú interactivo, validaciones, formato
+### Información del Curso
+- **Institución**: Universidad Internacional de La Rioja (UNIR)
+- **Programa**: Máster Universitario en Inteligencia Artificial
+- **Curso**: Programación en Python
+- **Período**: Agosto 2025
 
 ---
 
-## 🤖 Transparencia en el Uso de IA
+## Transparencia en el Uso de IA
 
-### 📝 **Declaración de Transparencia Académica**
+### Declaración de Transparencia Académica
 
 En cumplimiento con los estándares de transparencia académica:
 
-- **💻 Código Fuente**: Desarrollado íntegramente por la autora
-- **📊 Lógica y Algoritmos**: Diseño e implementación original
-- **🎨 Documentación**: Elaborada con asistencia de IA Generativa para formato y presentación
-- **🔍 Contenido Técnico**: Validado y verificado por la autora
+- **Código Fuente**: Desarrollado íntegramente por la autora
+- **Lógica y Algoritmos**: Diseño e implementación original
+- **Documentación**: Elaborada con asistencia de IA Generativa para formato y presentación
+- **Contenido Técnico**: Validado y verificado por la autora
 
 **Esta declaración refleja el uso responsable y transparente de tecnologías emergentes en el contexto académico.**
 
 ---
 
-## 📄 Licencia
+## Licencia
 
-### 🎓 **Licencia Académica**
+### Licencia Académica
 Este proyecto está desarrollado como parte de un programa académico de la Universidad Internacional de La Rioja (UNIR). 
 
 **© Agosto 2025 - Lorelay Pricop Florescu**  
@@ -439,41 +662,47 @@ Este proyecto está desarrollado como parte de un programa académico de la Univ
 
 ---
 
-## 🤝 Contribuciones
+## Contribuciones
 
-### 📋 **Política de Contribuciones**
+### Política de Contribuciones
 Este es un proyecto académico individual desarrollado para cumplir con los requisitos del curso de Programación en Python. No se aceptan contribuciones externas en este momento.
 
-### 💡 **Sugerencias y Feedback**
+### Sugerencias y Feedback
 Para sugerencias, preguntas o feedback sobre el proyecto:
-- 📧 **Email**: lorelaypricop@gmail.com
-- 🔗 **LinkedIn**: [@lorelaypricop](https://www.linkedin.com/in/lorelaypricop)
+- **Email**: lorelaypricop@gmail.com
+- **LinkedIn**: [@lorelaypricop](https://www.linkedin.com/in/lorelaypricop)
 
 ---
 
-## 📁 Estructura del Repositorio
+## Estructura del Repositorio
 
 ```
 Curso_Python_UNIR/
-├── README.md                           # 📋 Este archivo
-├── .gitignore                          # 🚫 Configuración de Git
-├── trabajo_1/                          # 📚 Calculadora de Promedios Escolares
+├── README.md                           # Este archivo
+├── .gitignore                          # Configuración de Git
+├── trabajo_1/                          # Calculadora de Promedios Escolares
 │   ├── trabajo_1_sintaxis_python.py
-│   ├── DOCUMENTACION_TECNICA_TRABAJO1.md
-│   ├── RESUMEN_EJECUTIVO_TRABAJO1.md
-│   └── INSTRUCCIONES_RAPIDAS.md
-└── trabajo_2/                          # 🏪 Sistema de Inventario POO
-    ├── trabajo_2_Sistema_Inventario_POO.py
-    ├── DOCUMENTACION_TECNICA_TRABAJO2.md
-    ├── RESUMEN_EJECUTIVO_TRABAJO2.md
-    └── INSTRUCCIONES_RAPIDAS.md
+│   └── DOCUMENTACION_TECNICA_TRABAJO1.md
+├── trabajo_2/                          # Sistema de Inventario POO
+│   ├── trabajo_2_Sistema_Inventario_POO.py
+│   └── DOCUMENTACION_TECNICA_TRABAJO2.md
+├── trabajo_3/                          # Análisis de Red de Tiendas
+│   ├── analisis_red_tiendas.ipynb
+│   ├── ventas.csv
+│   ├── inventarios.csv
+│   ├── satisfaccion.csv
+│   └── DOCUMENTACION_TECNICA_TRABAJO3.md
+└── trabajo_4/                          # Análisis de Visualizaciones
+    ├── analisis_ventas_minoristas.py
+    ├── requirements.txt
+    └── DOCUMENTACION_TECNICA_TRABAJO4.md
 ```
 
 ---
 
 <div align="center">
 
-### 🚀 **¿Listo para empezar?**
+### **¿Listo para empezar?**
 
 ```bash
 # Clonar el repositorio
@@ -487,6 +716,17 @@ python trabajo_1_sintaxis_python.py
 # Ejecutar Trabajo 2: Sistema de Inventario
 cd ../trabajo_2
 python trabajo_2_Sistema_Inventario_POO.py
+
+# Ejecutar Trabajo 3: Análisis de Red de Tiendas
+cd ../trabajo_3
+pip install pandas numpy jupyter
+jupyter notebook
+# Abrir: analisis_red_tiendas.ipynb
+
+# Ejecutar Trabajo 4: Análisis de Visualizaciones
+cd ../trabajo_4
+pip install -r requirements.txt
+python analisis_ventas_minoristas.py
 ```
 
 ---

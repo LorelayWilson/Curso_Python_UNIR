@@ -1,6 +1,6 @@
-# 📋 Documentación Técnica - Sistema de Inventario POO
+# Documentación Técnica - Sistema de Inventario POO
 
-## 📑 Índice
+## Índice
 1. [Descripción General](#descripción-general)
 2. [Arquitectura del Sistema](#arquitectura-del-sistema)
 3. [Clases Principales](#clases-principales)
@@ -12,11 +12,11 @@
 
 ---
 
-## 🎯 Descripción General
+## Descripción General
 
 El **Sistema de Inventario POO** es una aplicación Python que implementa los principios de Programación Orientada a Objetos para gestionar un inventario de productos. El sistema permite realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) sobre productos, calcular valores totales y gestionar configuraciones avanzadas.
 
-### ✨ Características Principales
+### Características Principales
 - **Gestión completa de productos** (CRUD) con validaciones robustas
 - **Manejo exhaustivo de excepciones** y validaciones multicapa
 - **Interfaz de usuario intuitiva** con menú interactivo de 10 opciones
@@ -32,7 +32,7 @@ El **Sistema de Inventario POO** es una aplicación Python que implementa los pr
 
 ---
 
-## 🏗️ Arquitectura del Sistema
+## Arquitectura del Sistema
 
 ```
 Sistema de Inventario POO
@@ -53,16 +53,16 @@ Sistema de Inventario POO
     └── main()
 ```
 
-### 🔧 Paradigmas Implementados
+### Paradigmas Implementados
 - **Encapsulamiento**: Atributos privados con acceso controlado mediante properties
 - **Abstracción**: Métodos que ocultan la complejidad interna
 - **Polimorfismo**: Sobrecarga del método `__str__` para representación textual
 - **Composición**: Inventario compuesto por objetos Producto
 - **Validación Multicapa**: Properties, métodos y interfaz con validaciones independientes
 
-### 🚀 **Mejoras Implementadas Post-Feedback UNIR**
+### Mejoras Implementadas Post-Feedback UNIR
 
-#### 🔸 **Excepciones Personalizadas**
+#### Excepciones Personalizadas
 ```python
 class ProductoNoEncontrado(Exception):
     """Excepción lanzada cuando no se encuentra un producto en el inventario"""
@@ -77,7 +77,7 @@ class InventarioVacio(Exception):
     pass
 ```
 
-#### 🔸 **Método de Actualización Simultánea**
+#### Método de Actualización Simultánea
 ```python
 def actualizar_atributos(self, nuevo_precio: float = None, nueva_cantidad: int = None):
     """
@@ -86,7 +86,7 @@ def actualizar_atributos(self, nuevo_precio: float = None, nueva_cantidad: int =
     """
 ```
 
-#### 🔸 **Función de Exportación**
+#### Función de Exportación
 ```python
 def exportar_inventario(self, nombre_archivo: str = "inventario_exportado.txt"):
     """
@@ -95,7 +95,7 @@ def exportar_inventario(self, nombre_archivo: str = "inventario_exportado.txt"):
     """
 ```
 
-#### 🔸 **Ordenamiento Avanzado**
+#### Ordenamiento Avanzado
 ```python
 def listar_productos(self, ordenar_por: str = "nombre"):
     """
@@ -106,9 +106,9 @@ def listar_productos(self, ordenar_por: str = "nombre"):
 
 ---
 
-## 📦 Clases Principales
+## Clases Principales
 
-### 🔸 **Clase Producto**
+### Clase Producto
 
 **Propósito**: Representa un producto individual en el inventario con validaciones robustas.
 
@@ -147,14 +147,14 @@ def cantidad(self, value: int)
 | `calcular_valor_total()` | Calcula precio × cantidad | None | float | Multiplicación directa de atributos |
 | `__str__()` | Representación textual | None | str | Formato: "Producto: X | Precio: $Y | Cantidad: Z | Valor Total: $W" |
 
-> **💡 Nota**: El método `actualizar_atributos()` es una funcionalidad adicional no requerida por el enunciado, pero que aporta valor práctico al permitir actualizar precio y cantidad en una sola operación.
+> **Nota**: El método `actualizar_atributos()` es una funcionalidad adicional no requerida por el enunciado, pero que aporta valor práctico al permitir actualizar precio y cantidad en una sola operación.
 
 #### Validaciones Implementadas:
 - **Nombre**: No puede ser vacío, debe ser string, se eliminan espacios
 - **Precio**: Debe ser numérico (int o float) y positivo
 - **Cantidad**: Debe ser entero y no negativo
 
-### 🔸 **Clase Inventario**
+### Clase Inventario
 
 **Propósito**: Gestiona una colección de productos y sus operaciones con configuración flexible.
 
@@ -180,7 +180,7 @@ def cantidad(self, value: int)
 - **Manejo inteligente de duplicados**: Dos modos de operación (manual/automático)
 - **Validación de tipos**: Verifica que se agreguen objetos Producto válidos
 
-### 🔸 **Funciones Auxiliares**
+### Funciones Auxiliares
 
 #### `obtener_numero(mensaje, tipo=float, minimo=0)`
 Función robusta para obtener entrada numérica del usuario:
@@ -188,7 +188,7 @@ Función robusta para obtener entrada numérica del usuario:
 - **Retorno**: int/float validado
 - **Funcionalidad**: Validación de tipo, valor mínimo, manejo de entradas vacías, mensajes de error específicos
 
-### 🔸 **Interfaz de Usuario**
+### Interfaz de Usuario
 
 #### `menu_principal()`
 Sistema de menú interactivo con 9 opciones principales:
@@ -203,18 +203,18 @@ Sistema de menú interactivo con 9 opciones principales:
 9. **Exportar inventario a archivo** - **Funcionalidad Extra** para respaldos
 10. **Salir** - Cierre elegante del programa
 
-> **💡 Funcionalidades Adicionales**: Las opciones 9 (exportar) y las mejoras en ordenamiento son funcionalidades extra que enriquecen el sistema sin ser requeridas por el enunciado.
+> **Funcionalidades Adicionales**: Las opciones 9 (exportar) y las mejoras en ordenamiento son funcionalidades extra que enriquecen el sistema sin ser requeridas por el enunciado.
 
 ---
 
-## 💻 Instalación y Ejecución
+## Instalación y Ejecución
 
-### 📋 **Requisitos Previos**
+### Requisitos Previos
 - Python 3.6 o superior
 - Acceso a terminal o línea de comandos
 - No se requieren dependencias externas
 
-### 🚀 **Ejecución Directa**
+### Ejecución Directa
 ```bash
 # Navegar al directorio del trabajo
 cd trabajo_2
@@ -223,7 +223,7 @@ cd trabajo_2
 python trabajo_2_Sistema_Inventario_POO.py
 ```
 
-### 🔧 **Verificación de Instalación**
+### Verificación de Instalación
 ```bash
 # Verificar versión de Python
 python --version
@@ -232,16 +232,16 @@ python --version
 dir trabajo_2_Sistema_Inventario_POO.py
 ```
 
-### 🎯 **Ejecución desde IDE**
+### Ejecución desde IDE
 - Abrir el archivo en Cursor, Visual Studio Code, etc.
 - Ejecutar con F5 o botón de ejecución
 - El programa se ejecuta en consola/terminal integrada
 
 ---
 
-## 📖 Ejemplos de Uso
+## Ejemplos de Uso
 
-### 🎯 **Ejemplo 1: Uso Básico del Sistema**
+### Ejemplo 1: Uso Básico del Sistema
 ```
 === BIENVENIDO AL SISTEMA DE INVENTARIO - VERSIÓN MEJORADA ===
 Este sistema te permite gestionar productos de manera eficiente.
@@ -275,7 +275,7 @@ Ingrese la cantidad: 5
 Producto 'Laptop Dell' agregado exitosamente al inventario.
 ```
 
-### ⚙️ **Ejemplo 2: Manejo de Duplicados**
+### Ejemplo 2: Manejo de Duplicados
 ```
 Seleccione una opción (1-9): 1
 
@@ -289,7 +289,7 @@ Cantidad actual: 5, Cantidad a agregar: 3
 Cantidad actualizada exitosamente para Laptop Dell: 5 → 8 unidades
 ```
 
-### 🔍 **Ejemplo 3: Búsqueda y Consulta**
+### Ejemplo 3: Búsqueda y Consulta
 ```
 Seleccione una opción (1-9): 2
 
@@ -310,7 +310,7 @@ Valor total del inventario: $9604.00
 ==================================================
 ```
 
-### ⚠️ **Ejemplo 4: Validaciones y Manejo de Errores**
+### Ejemplo 4: Validaciones y Manejo de Errores
 ```
 Seleccione una opción (1-9): 1
 
@@ -330,9 +330,9 @@ Producto 'Mouse' agregado exitosamente al inventario.
 
 ---
 
-## 🏆 Criterios de Evaluación UNIR
+## Criterios de Evaluación UNIR
 
-### 📊 **Calificación Final: 10/10 (100%)**
+### Calificación Final: 10/10 (100%)
 
 | **Criterio** | **Peso** | **Calificación** | **Estado** |
 |:-------------|:--------:|:----------------:|:----------:|
@@ -341,52 +341,52 @@ Producto 'Mouse' agregado exitosamente al inventario.
 | **Manejo de excepciones** | 20% | 10/10 | ✅ **Perfecto** |
 | **Interfaz de usuario y funcionalidad** | 20% | 10/10 | ✅ **Perfecto** |
 
-### 🎯 **Criterios Cumplidos**
+### Criterios Cumplidos
 
-#### ✅ **Criterio 1: Implementación de la clase Producto (30%)**
+#### ✅ Criterio 1: Implementación de la clase Producto (30%)
 - **Clase Producto implementada**: Constructor, properties, métodos de actualización, `calcular_valor_total()`, `__str__()`
 - **Atributos correctos**: nombre, precio, cantidad con validaciones básicas
 - **Métodos requeridos**: `actualizar_precio()`, `actualizar_cantidad()`, `calcular_valor_total()`, `__str__()`
 - **Validaciones robustas**: Implementadas en setters y métodos de negocio
 
-#### ✅ **Criterio 2: Implementación de la clase Inventario (30%)**
+#### ✅ Criterio 2: Implementación de la clase Inventario (30%)
 - **Clase Inventario implementada**: Gestión de colección, operaciones CRUD, configuración de comportamiento
 - **Métodos requeridos**: agregar productos, buscar por nombre, calcular valor total, listar productos
 - **Funcionalidad completa**: Todas las operaciones solicitadas implementadas correctamente
 - **Cálculos**: Suma automática de valores totales del inventario
 
-#### ✅ **Criterio 3: Manejo de excepciones (25%)**
+#### ✅ Criterio 3: Manejo de excepciones (25%)
 - **Bloques try-except**: Implementados en métodos críticos y interfaz de usuario
 - **Validaciones multicapa**: Properties, métodos y interfaz con manejo independiente de errores
 - **Mensajes de error específicos**: Información contextual detallada para debugging
 - **Manejo de interrupciones**: Captura elegante de `KeyboardInterrupt`
 
-#### ✅ **Criterio 4: Interfaz de usuario y funcionalidad (20%)**
+#### ✅ Criterio 4: Interfaz de usuario y funcionalidad (20%)
 - **Menú interactivo completo**: 9 opciones funcionales con validaciones
 - **Todas las operaciones funcionando**: CRUD completo, búsquedas, cálculos
 - **Resultados formateados correctamente**: Salida clara y profesional
 - **Validación de entradas**: Verificación robusta de datos del usuario
 
-### 🌟 **Funcionalidades Adicionales Implementadas**
-- 🎁 **Eliminación de productos** con confirmación de seguridad
-- 🎁 **Configuración de actualización automática** para productos duplicados
-- 🎁 **Mensajes de error mejorados** con información contextual específica
-- 🎁 **Properties con setters** para validaciones centralizadas
-- 🎁 **Búsqueda insensible a mayúsculas** para mejor experiencia de usuario
-- 🎁 **Manejo inteligente de duplicados** con dos modos de operación
-- 🎁 **Método `actualizar_atributos()`** para actualización simultánea de precio y cantidad
-- 🎁 **Función de exportación** del inventario a archivo de texto
-- 🎁 **Ordenamiento avanzado** en `listar_productos` por múltiples criterios
-- 🎁 **Resumen rápido del inventario** tras cada operación
-- 🎁 **Excepciones personalizadas** para casos específicos del negocio
+### Funcionalidades Adicionales Implementadas
+- **Eliminación de productos** con confirmación de seguridad
+- **Configuración de actualización automática** para productos duplicados
+- **Mensajes de error mejorados** con información contextual específica
+- **Properties con setters** para validaciones centralizadas
+- **Búsqueda insensible a mayúsculas** para mejor experiencia de usuario
+- **Manejo inteligente de duplicados** con dos modos de operación
+- **Método `actualizar_atributos()`** para actualización simultánea de precio y cantidad
+- **Función de exportación** del inventario a archivo de texto
+- **Ordenamiento avanzado** en `listar_productos` por múltiples criterios
+- **Resumen rápido del inventario** tras cada operación
+- **Excepciones personalizadas** para casos específicos del negocio
 
-### 🌟 **Resumen Global de la Evaluación UNIR**
+### Resumen Global de la Evaluación UNIR
 
 > **"El proyecto cumple de manera sobresaliente con todos los requisitos funcionales y estructurales establecidos en el enunciado. Todas las clases y métodos requeridos están implementados correctamente, con validaciones robustas y manejo exhaustivo de excepciones. La interfaz de usuario es completa, intuitiva y permite realizar todas las operaciones solicitadas. Las mejoras adicionales implementadas (como exportación, configuración avanzada y manejo inteligente de duplicados) enriquecen el sistema sin afectar la alineación con los requisitos. El código demuestra un dominio sólido de la programación orientada a objetos en Python y sigue buenas prácticas de desarrollo profesional."**
 
 ---
 
-## 🎉 **Conclusión**
+## Conclusión
 
 El **Trabajo 2 - Sistema de Inventario POO** representa una implementación completa y profesional de la programación orientada a objetos en Python, cumpliendo con todos los requisitos académicos establecidos por UNIR. 
 
@@ -400,34 +400,34 @@ El sistema de inventario proporciona **funcionalidad empresarial robusta**, esta
 
 ---
 
-## 👩‍💻 Autoría y Contexto
+## Autoría y Contexto
 
-### 🌟 **Desarrolladora**
+### Desarrolladora
 **Lorelay Pricop Florescu**
-- **🎓 Titulación**: Graduada en Tecnología Interactiva
-- **💼 Perfil Profesional**: Tecnóloga y Project Manager
-- **📚 Formación Actual**: Máster Universitario en Inteligencia Artificial
-- **🎯 Especialidad**: IA Generativa para Aplicaciones Empresariales
-- **🏛️ Universidad**: UNIR (Universidad Internacional de La Rioja)
+- **Titulación**: Graduada en Tecnología Interactiva
+- **Perfil Profesional**: Tecnóloga y Project Manager
+- **Formación Actual**: Máster Universitario en Inteligencia Artificial
+- **Especialidad**: IA Generativa para Aplicaciones Empresariales
+- **Universidad**: UNIR (Universidad Internacional de La Rioja)
 
-### 📞 **Contacto Profesional**
+### Contacto Profesional
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Lorelay%20Pricop-0077b5?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/lorelaypricop)
 [![Email](https://img.shields.io/badge/Email-lorelaypricop@gmail.com-d14836?style=flat-square&logo=gmail)](mailto:lorelaypricop@gmail.com)
 
-### 🎓 **Contexto Académico**
-- **🏫 Institución**: Universidad Internacional de La Rioja (UNIR)
-- **📚 Programa**: Máster Universitario en Inteligencia Artificial
-- **🎯 Curso**: Programación en Python
-- **📅 Período**: Agosto 2025
-- **📋 Trabajo**: Trabajo 2 - Sistema de Inventario POO
+### Contexto Académico
+- **Institución**: Universidad Internacional de La Rioja (UNIR)
+- **Programa**: Máster Universitario en Inteligencia Artificial
+- **Curso**: Programación en Python
+- **Período**: Agosto 2025
+- **Trabajo**: Trabajo 2 - Sistema de Inventario POO
 
-### 🤖 **Transparencia en el Uso de IA**
-- **💻 Código Fuente**: Desarrollado íntegramente por la autora
-- **📊 Lógica y Algoritmos**: Diseño e implementación original en POO
-- **🎨 Documentación**: Elaborada con asistencia de IA Generativa para formato y presentación
-- **🔍 Contenido Técnico**: Validado y verificado por la autora
+### Transparencia en el Uso de IA
+- **Código Fuente**: Desarrollado íntegramente por la autora
+- **Lógica y Algoritmos**: Diseño e implementación original en POO
+- **Documentación**: Elaborada con asistencia de IA Generativa para formato y presentación
+- **Contenido Técnico**: Validado y verificado por la autora
 
-### 📄 **Licencia**
+### Licencia
 **© Agosto 2025 - Lorelay Pricop Florescu**  
 *Licencia Académica - Todos los derechos reservados*
 
@@ -435,10 +435,10 @@ El sistema de inventario proporciona **funcionalidad empresarial robusta**, esta
 
 <div align="center">
 
-**🎓 Sistema de Inventario POO - UNIR**  
+**Sistema de Inventario POO - UNIR**  
 *Proyecto académico del Máster en Inteligencia Artificial*
 
-[📋 **Documentación Técnica**](DOCUMENTACION_TECNICA_TRABAJO2.md) • [📊 **Resumen Ejecutivo**](RESUMEN_EJECUTIVO_TRABAJO2.md) • [📖 **README Principal**](../README.md)
+[**Documentación Técnica**](DOCUMENTACION_TECNICA_TRABAJO2.md) • [**README Principal**](../README.md)
 
 ---
 
