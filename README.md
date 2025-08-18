@@ -4,7 +4,7 @@
 
 ![Python](https://img.shields.io/badge/Python-3.6+-3776ab?style=for-the-badge&logo=python&logoColor=white)
 ![Universidad](https://img.shields.io/badge/Universidad-UNIR-d32f2f?style=for-the-badge)
-![Estado](https://img.shields.io/badge/Estado-3%20Trabajos%20Completados-4caf50?style=for-the-badge&logo=check-circle&logoColor=white)
+![Estado](https://img.shields.io/badge/Estado-4%20Trabajos%20Completados-4caf50?style=for-the-badge&logo=check-circle&logoColor=white)
 ![Licencia](https://img.shields.io/badge/Licencia-Académica-blue?style=for-the-badge)
 
 **Portafolio completo de proyectos académicos desarrollados en Python**
@@ -28,6 +28,7 @@ Este repositorio contiene una **colección completa de proyectos académicos** d
 - ✅ **Trabajo 1**: Calculadora de Promedios Escolares - Sintaxis y Estructuras Básicas
 - ✅ **Trabajo 2**: Sistema de Inventario POO - Programación Orientada a Objetos
 - ✅ **Trabajo 3**: Análisis de Red de Tiendas - Pandas y Numpy para Análisis de Datos
+- ✅ **Trabajo 4**: Análisis de Visualizaciones - Matplotlib y Seaborn
 - ✅ **Documentación Completa**: Cada proyecto incluye documentación técnica exhaustiva
 - ✅ **Estándares Profesionales**: Código limpio, validaciones robustas y manejo de errores
 
@@ -74,11 +75,14 @@ jupyter notebook
 # Abrir: analisis_red_tiendas.ipynb
 ```
 
-### Uso Básico
-```python
-# Trabajo 1: Sigue las instrucciones para ingresar materias y calificaciones
-# Trabajo 2: Selecciona las opciones del 1 al 9 en el menú interactivo
-# Trabajo 3: Ejecuta las celdas del notebook para análisis de datos
+#### **Trabajo 4: Análisis de Visualizaciones**
+```bash
+# Navegar al directorio del trabajo
+cd trabajo_4
+
+# Ejecutar el análisis
+python analisis_ventas_minoristas.py
+# Salida: genera fig_resumen_subplots.png y muestra gráficos en pantalla
 ```
 
 ---
@@ -116,6 +120,19 @@ jupyter notebook
 | **Detección de Anomalías** | Identificación de tiendas con bajo rendimiento | ✅ |
 | **Reportes Automáticos** | Generación de insights y recomendaciones | ✅ |
 | **Validación de Datos** | Verificación de integridad y consistencia | ✅ |
+
+### Trabajo 4: Análisis de Visualizaciones
+| **Funcionalidad** | **Descripción** | **Estado** |
+|:---|:---|:---:|
+| **Carga de Dataset** | Lectura de `superstore_dataset2012.csv` (latin-1) | ✅ |
+| **Preparación** | Conversión de fechas y creación de `Order Month` | ✅ |
+| **Univariante Matplotlib** | Histograma de `Sales` | ✅ |
+| **Univariante Seaborn** | Barras de frecuencia por `Category` | ✅ |
+| **Bivariante Matplotlib** | Dispersión `Sales` vs `Profit` | ✅ |
+| **Bivariante Seaborn** | `boxplot` `Profit` por `Category`, `regplot` | ✅ |
+| **Multivariante Seaborn** | Heatmap de correlaciones | ✅ |
+| **Subplots 2x2** | Figura combinada con título general | ✅ |
+| **Guardado de imagen** | `fig_resumen_subplots.png` | ✅ |
 
 ### Características Comunes
 - **Documentación Exhaustiva**: Cada proyecto incluye documentación técnica completa
@@ -236,6 +253,28 @@ graph TD
 
 ---
 
+### Trabajo 4: Análisis de Visualizaciones
+#### **Flujo del Script**
+```mermaid
+graph TD
+    A[CSV local superstore_dataset2012] --> B[Carga y preparación (pandas)]
+    B --> C[Univariante Matplotlib: hist Sales]
+    B --> D[Univariante Seaborn: barras Category]
+    B --> E[Bivariante Matplotlib: scatter Sales-Profit]
+    B --> F[Bivariante Seaborn: box Profit por Category]
+    B --> G[Seaborn: regplot Sales-Profit]
+    B --> H[Seaborn: heatmap correlaciones]
+    C --> I[Subplots 2x2]
+    D --> I
+    E --> I
+    F --> I
+    I --> J[Guardar fig_resumen_subplots.png]
+```
+
+#### **Configuración Visual**
+- `sns.set_theme(style="whitegrid", palette="Set2")`
+- Títulos y etiquetas en cada gráfico; rotación en categorías
+
 ## Documentación
 
 ### Archivos Disponibles
@@ -246,6 +285,7 @@ graph TD
 | **trabajo_1/** | Calculadora de Promedios Escolares | Proyecto de sintaxis básica |
 | **trabajo_2/** | Sistema de Inventario POO | Proyecto de programación orientada a objetos |
 | **trabajo_3/** | Análisis de Red de Tiendas | Proyecto de análisis de datos con Pandas y Numpy |
+| **trabajo_4/** | Análisis de Visualizaciones | Proyecto de visualización con Matplotlib y Seaborn |
 
 ### Documentación por Proyecto
 
@@ -261,6 +301,10 @@ graph TD
 - **Documentación Técnica**: `trabajo_3/DOCUMENTACION_TECNICA_TRABAJO3.md`
 - **Código Fuente**: `trabajo_3/analisis_red_tiendas.ipynb`
 
+#### **Trabajo 4: Análisis de Visualizaciones**
+- **Documentación Técnica**: `trabajo_4/DOCUMENTACION_TECNICA_TRABAJO4.md`
+- **Código Fuente**: `trabajo_4/analisis_ventas_minoristas.py`
+
 ---
 
 ## Instalación
@@ -272,41 +316,7 @@ graph TD
 - **Almacenamiento**: 1 MB
 
 ### Pasos de Instalación
-
-#### **1. Verificar Python**
-```bash
-python --version
-# Debe mostrar Python 3.6 o superior
-```
-
-#### **2. Descargar el Proyecto**
-```bash
-# Opción A: Clonar con Git
-git clone <URL_DEL_REPOSITORIO>
-
-# Opción B: Descargar ZIP
-# Descargar y extraer el archivo ZIP
-```
-
-#### **3. Navegar al Directorio**
-```bash
-cd Curso_Python_UNIR
-```
-
-#### **4. Ejecutar los Proyectos**
-```bash
-# Trabajo 1: Calculadora de Promedios
-python trabajo_1/trabajo_1_sintaxis_python.py
-
-# Trabajo 2: Sistema de Inventario
-python trabajo_2/trabajo_2_Sistema_Inventario_POO.py
-
-# Trabajo 3: Análisis de Red de Tiendas
-cd trabajo_3
-pip install pandas numpy jupyter
-jupyter notebook
-# Abrir: analisis_red_tiendas.ipynb
-```
+Consulta la sección "Inicio Rápido" para los comandos y flujo de ejecución.
 
 ### Solución de Problemas Comunes
 
@@ -321,47 +331,16 @@ jupyter notebook
 ## Ejemplos de Uso
 
 ### Trabajo 1: Calculadora de Promedios
-```bash
-# Ejecutar el programa
-python trabajo_1/trabajo_1_sintaxis_python.py
-
-# Seguir las instrucciones:
-# 1. Configurar umbral de aprobación (opcional)
-# 2. Ingresar nombre de materia
-# 3. Ingresar calificación (0.0 - 10.0)
-# 4. Confirmar si continuar con más materias
-# 5. Ver resumen completo con análisis
-```
+Ver "Inicio Rápido" para ejecutar. Tras iniciar, sigue el flujo guiado y revisa el resumen final.
 
 ### Trabajo 2: Sistema de Inventario
-```bash
-# Ejecutar el sistema
-python trabajo_2/trabajo_2_Sistema_Inventario_POO.py
-
-# Seguir el menú interactivo:
-# 1. Agregar productos
-# 2. Buscar productos
-# 3. Listar inventario
-# 4. Calcular valores
-# 5-6. Actualizar datos
-# 7. Eliminar productos
-# 8. Configurar sistema
-# 9. Salir
-```
+Ver "Inicio Rápido" para ejecutar. Usa el menú interactivo (1-9) para operar el inventario.
 
 ### Trabajo 3: Análisis de Red de Tiendas
-```bash
-# Ejecutar el notebook
-cd trabajo_3
-pip install pandas numpy jupyter
-jupyter notebook
+Ver "Inicio Rápido" para ejecutar el notebook y seguir el análisis paso a paso.
 
-# Seguir el análisis:
-# 1. Abrir: analisis_red_tiendas.ipynb
-# 2. Ejecutar celdas secuencialmente
-# 3. Revisar análisis de ventas, inventarios y satisfacción
-# 4. Analizar simulaciones y proyecciones futuras
-```
+### Trabajo 4: Análisis de Visualizaciones
+Ver "Inicio Rápido" para ejecutar el script y comprobar la imagen generada.
 
 #### **Ejemplos de Análisis Realizados**
 - **Análisis de Ventas**: Total por producto y por tienda
@@ -444,112 +423,6 @@ Error: No hay datos suficientes para el análisis estadístico
 
 ---
 
-## Métricas del Portafolio
-
-### Trabajo 1: Calculadora de Promedios
-| **Métrica** | **Valor** | **Categoría** |
-|:---|---:|:---|
-| **Líneas de Código** | 132 | Implementación |
-| **Funciones** | 7 | Funcionalidad |
-| **Constantes** | 3 | Configuración |
-| **Complejidad Ciclomática** | Baja | Calidad |
-| **Mantenibilidad** | Alta | Calidad |
-
-### Trabajo 2: Sistema de Inventario
-| **Métrica** | **Valor** | **Categoría** |
-|:---|---:|:---|
-| **Líneas de Código** | 493 | Implementación |
-| **Clases Principales** | 2 | Arquitectura |
-| **Métodos Implementados** | 15+ | Funcionalidad |
-| **Funciones Auxiliares** | 3 | Soporte |
-| **Opciones de Menú** | 9 | Interfaz |
-| **Cobertura de Validaciones** | 100% | Calidad |
-
-### Trabajo 3: Análisis de Red de Tiendas
-| **Métrica** | **Valor** | **Categoría** |
-|:---|---:|:---|
-| **Celdas del Notebook** | 15 | Implementación |
-| **Archivos CSV** | 3 | Datos |
-| **Librerías Utilizadas** | 4 | Tecnología |
-| **Análisis Implementados** | 4 | Funcionalidad |
-| **Visualizaciones** | 4 | Presentación |
-| **Cumplimiento UNIR** | 100% | Calidad |
-| **Registros de Datos** | 150+ | Contenido |
-| **Funciones de Análisis** | 6+ | Funcionalidad |
-| **Cálculos Estadísticos** | 8+ | Análisis |
-| **Simulaciones Futuras** | 3 meses | Proyecciones |
-| **Manejo de Errores** | 5 tipos | Robustez |
-| **Documentación** | Completa | Calidad |
-
-### Métricas Generales
-| **Métrica** | **Valor** | **Categoría** |
-|:---|---:|:---|
-| **Total de Líneas** | 700+ | Implementación |
-| **Proyectos Completados** | 3 | Portafolio |
-| **Documentación Generada** | 3 archivos | Documentación |
-| **Cobertura de Funcionalidades** | 100% | Calidad |
-| **Estándares de Código** | PEP 8 | Calidad |
-
----
-
-## Roadmap y Mejoras Futuras
-
-### Limitaciones Actuales
-
-#### **Trabajo 1: Calculadora de Promedios**
-- **Persistencia**: Los datos no se guardan entre sesiones
-- **Interfaz**: Solo consola, sin interfaz gráfica
-- **Historial**: No hay seguimiento temporal de calificaciones
-
-#### **Trabajo 2: Sistema de Inventario**
-- **Persistencia**: Los datos no se guardan entre sesiones
-- **Escalabilidad**: Optimizado para inventarios pequeños a medianos
-- **Concurrencia**: Diseñado para un solo usuario
-
-#### **Trabajo 3: Análisis de Red de Tiendas**
-- **Datos Estáticos**: Los CSV no se actualizan en tiempo real
-- **Interfaz**: Solo notebook de Jupyter, sin interfaz web
-- **Escalabilidad**: Optimizado para redes de hasta 50 tiendas
-- **Persistencia**: Los análisis no se guardan entre sesiones
-- **Conectividad**: Requiere acceso a internet para ejecución inicial
-
-### Mejoras Planificadas
-
-#### **Trabajo 1: Funcionalidades Futuras**
-- [ ] **Persistencia de Datos**: Guardado en archivos CSV/JSON
-- [ ] **Gráficos Estadísticos**: Visualización de calificaciones
-- [ ] **Historial Académico**: Seguimiento temporal de notas
-- [ ] **Exportación de Reportes**: Generación de PDFs
-- [ ] **Interfaz Web**: Versión con interfaz gráfica
-
-#### **Trabajo 2: Funcionalidades Futuras**
-- [ ] **Persistencia de Datos**: Almacenamiento en archivos JSON/CSV
-- [ ] **Interfaz Gráfica**: GUI con tkinter o PyQt
-- [ ] **API REST**: Servicios web para integración
-- [ ] **Reportes Avanzados**: Estadísticas y análisis detallados
-- [ ] **Gestión de Categorías**: Organización por tipos de productos
-
-#### **Trabajo 3: Funcionalidades Futuras**
-- [ ] **Análisis de Series Temporales**: Implementar tendencias y estacionalidad
-- [ ] **Dashboard Interactivo**: Interfaz web para monitoreo continuo
-- [ ] **Modelos Predictivos**: Machine Learning para proyecciones avanzadas
-- [ ] **Integración en Tiempo Real**: Conexión con sistemas operativos
-- [ ] **Análisis de Correlaciones**: Relaciones entre múltiples métricas
-- [ ] **Alertas Automáticas**: Notificaciones de niveles críticos de inventario
-- [ ] **Reportes Personalizados**: Generación automática de informes ejecutivos
-- [ ] **Análisis Geográfico**: Mapeo de rendimiento por ubicación de tiendas
-- [ ] **Benchmarking**: Comparación con estándares de la industria
-- [ ] **API de Datos**: Interfaz para integración con otros sistemas
-
-### Optimizaciones Técnicas Comunes
-- [ ] **Testing Automatizado**: Suite de pruebas unitarias
-- [ ] **Logging Avanzado**: Sistema de registro mejorado
-- [ ] **Configuración Externa**: Archivos de configuración separados
-- [ ] **Internacionalización**: Soporte multiidioma
-- [ ] **Dockerización**: Contenedores para fácil despliegue
-
----
-
 ## Autoría
 
 ### Desarrolladora
@@ -625,41 +498,21 @@ Curso_Python_UNIR/
 ├── trabajo_2/                          # Sistema de Inventario POO
 │   ├── trabajo_2_Sistema_Inventario_POO.py
 │   └── DOCUMENTACION_TECNICA_TRABAJO2.md
-└── trabajo_3/                          # Análisis de Red de Tiendas
-    ├── analisis_red_tiendas.ipynb
-    ├── ventas.csv
-    ├── inventarios.csv
-    ├── satisfaccion.csv
-    └── DOCUMENTACION_TECNICA_TRABAJO3.md
+├── trabajo_3/                          # Análisis de Red de Tiendas
+│   ├── analisis_red_tiendas.ipynb
+│   ├── ventas.csv
+│   ├── inventarios.csv
+│   ├── satisfaccion.csv
+│   └── DOCUMENTACION_TECNICA_TRABAJO3.md
+└── trabajo_4/                          # Análisis de Visualizaciones
+    ├── analisis_ventas_minoristas.py
+    ├── superstore_dataset2012.csv
+    └── DOCUMENTACION_TECNICA_TRABAJO4.md
 ```
 
 ---
 
 <div align="center">
-
-### **¿Listo para empezar?**
-
-```bash
-# Clonar el repositorio
-git clone <URL_DEL_REPOSITORIO>
-cd Curso_Python_UNIR
-
-# Ejecutar Trabajo 1: Calculadora de Promedios
-cd trabajo_1
-python trabajo_1_sintaxis_python.py
-
-# Ejecutar Trabajo 2: Sistema de Inventario
-cd ../trabajo_2
-python trabajo_2_Sistema_Inventario_POO.py
-
-# Ejecutar Trabajo 3: Análisis de Red de Tiendas
-cd ../trabajo_3
-pip install pandas numpy jupyter
-jupyter notebook
-# Abrir: analisis_red_tiendas.ipynb
-```
-
----
 
 **UNIVERSIDAD INTERNACIONAL DE LA RIOJA**  
 *Máster Universitario en Inteligencia Artificial*  
